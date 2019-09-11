@@ -1,5 +1,10 @@
 #include"datagen.h"
 
+datagen::datagen()
+{
+
+}
+
 void datagen::fileOut(string file_name,vector<int> arr)
 {
     ofstream fileout;
