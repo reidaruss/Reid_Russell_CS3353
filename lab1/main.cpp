@@ -2,6 +2,7 @@
 #include <vector>
 #include <stdio.h>
 #include <math.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -12,35 +13,69 @@ void fileOut()
 
 }
 
-void randomize(int arr[], int SIZE)
+vector<int> randomize(int SIZE)
 {
-
-    for(int i = 0; i < SIZE; i ++)
-    {
-        int num = rand() % SIZE;
-        arr[i] = num;
-    }
-    for(int i = 0; i < SIZE; i ++)
-    {
+    vector<int> arr;
+    random_shuffle(arr.begin(), arr.end());
+    for(int i = 0; i < SIZE; i ++){
         cout << arr[i] << endl;
     }
+    return arr;
 
 }
 
-void reverse(int arr[], int SIZE)
+vector<int> reverse(int SIZE)
 {
-    int newarr[SIZE];
+    vector<int> arr;
     int j = 0;
     for(int i = SIZE-1; i >= 0; i --)
     {
-        newarr[j] = arr[i];
+        arr.push_back(i);
         j++;
     }
-    for(int i = 0; i < SIZE; i ++)
-    {
-        arr[i] = newarr[i];
-    }
+    return arr;
 
+}
+
+vector<int> twentyEighty(int SIZE)
+{
+    vector<int> arr;
+    int uni = SIZE * 0.2;
+    for(int i = 0; i < uni; i++)
+    {
+        arr[i] = i;
+    }
+    for(int i = uni; i < SIZE; i++)
+    {
+        arr[i] = arr[rand() % uni];
+    }
+    for(int i = 0; i < SIZE; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    return arr;
+}
+
+vector<int> thirtyRand(int SIZE)
+{
+    vector<int> arr;
+    for(int i = 0; i < SIZE; i++)
+    {
+        int num = rand() % 100 + 1;
+        if(num <= 30)
+        {
+            arr[i] = rand() % SIZE;
+        }
+        else
+        {
+            arr[i] = i;
+        }
+    }
+    for(int i = 0; i < SIZE; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    return arr;
 }
 
 
@@ -48,54 +83,66 @@ void reverse(int arr[], int SIZE)
 void ten()
 {
     int SIZE = 10;
-    int nums[SIZE];
-
-    for(int i = 0; i < SIZE; i ++)
-    {
-        nums[i] = i+1;
-    }
-    //randomize(nums,SIZE);
-    //reverse(nums,SIZE);
+    vector<int> nums;
+    vector<int> rev;
+    vector<int> partUni;
+    vector<int> partRand;
+cout << "Test" << endl;
+    nums = randomize(SIZE);
+//    rev = reverse(SIZE);
+//    partUni = twentyEighty(SIZE);
+//    partRand = thirtyRand(SIZE);
     cout << "Tens Done" << endl;
+    for (int i = 0; i < SIZE; i ++)
+    {
+        cout << nums[i] << endl;
+    }
 }
 
 void thousand()
 {
     int SIZE = 1000;
-    int nums[SIZE];
+    vector<int> nums;
+    vector<int> rev;
+    vector<int> partUni;
+    vector<int> partRand;
 
-    for(int i = 0; i < SIZE; i ++)
-    {
-        nums[i] = i+1;
-    }
-    //randomize(nums,SIZE);
-    //reverse(nums,SIZE);
+//    nums = randomize(SIZE);
+//    rev = reverse(SIZE);
+//    partUni = twentyEighty(SIZE);
+//    partRand = thirtyRand(SIZE);
     cout << "Thousand" << endl;
 }
 
 void tenThousand()
 {
     int SIZE = 10000;
-    int nums[SIZE];
+    vector<int> nums;
+    vector<int> rev;
+    vector<int> partUni;
+    vector<int> partRand;
 
-    for(int i = 0; i < SIZE; i ++)
-    {
-        nums[i] = i+1;
-    }
-    //reverse(nums,SIZE);
+
+//    nums = randomize(SIZE);
+//    rev = reverse(SIZE);
+//    partUni = twentyEighty(SIZE);
+//    partRand = thirtyRand(SIZE);
     cout << "Ten Thousand" << endl;
 }
 
 void hundThousand()
 {
     int SIZE = 100000;
-    int nums[SIZE];
+    vector<int> nums;
+    vector<int> rev;
+    vector<int> partUni;
+    vector<int> partRand;
 
-    for(int i = 0; i < SIZE; i ++)
-    {
-        nums[i] = i+1;
-    }
-    //reverse(nums,SIZE);
+
+//    nums = randomize(SIZE);
+//    rev = reverse(SIZE);
+//    partUni = twentyEighty(SIZE);
+//    partRand = thirtyRand(SIZE);
     cout << "Hund Thousand Done" << endl;
 }
 
@@ -103,6 +150,7 @@ void hundThousand()
 
 int main()
 {
+    srand(time(NULL));
     ten();
     thousand();
     tenThousand();
