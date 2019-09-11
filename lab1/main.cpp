@@ -1,16 +1,24 @@
 #include <iostream>
-#include <vector>
 #include <stdio.h>
-#include <math.h>
 #include <algorithm>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 
 
-void fileOut()
+void fileOut(string file_name,vector<int> arr)
 {
+    ofstream fileout;
+    fileout.open(file_name);
 
+    cout << "Writing File: " << file_name << endl;
+
+    fileout << arr.size() << endl;
+    for(int i = 0; i < arr.size(); i ++)
+    {
+        fileout << arr[i] << endl;
+    }
 }
 
 void randomize(vector<int>& arr,int SIZE)
@@ -86,6 +94,11 @@ void ten()
     rev = reverse(SIZE);
     partUni = twentyEighty(SIZE);
     partRand = thirtyRand(SIZE);
+
+    fileOut("ten_random.txt",nums);
+    fileOut("ten_reverse.txt",rev);
+    fileOut("ten_partUni.txt",partUni);
+    fileOut("ten_partRand.txt",partRand);
     cout << "Tens Done" << endl;
 
 }
@@ -103,6 +116,11 @@ void thousand()
     partUni = twentyEighty(SIZE);
     partRand = thirtyRand(SIZE);
 
+    fileOut("thousand_random.txt",nums);
+    fileOut("thousand_reverse.txt",rev);
+    fileOut("thousand_partUni.txt",partUni);
+    fileOut("thousand_partRand.txt",partRand);
+
     cout << "Thousand" << endl;
 }
 
@@ -119,6 +137,11 @@ void tenThousand()
     rev = reverse(SIZE);
     partUni = twentyEighty(SIZE);
     partRand = thirtyRand(SIZE);
+
+    fileOut("tenThousand_random.txt",nums);
+    fileOut("tenThousand_reverse.txt",rev);
+    fileOut("tenThousand_partUni.txt",partUni);
+    fileOut("tenThousand_partRand.txt",partRand);
     cout << "Ten Thousand" << endl;
 }
 
@@ -135,6 +158,11 @@ void hundThousand()
     rev = reverse(SIZE);
     partUni = twentyEighty(SIZE);
     partRand = thirtyRand(SIZE);
+
+    fileOut("hundThousand_random.txt",nums);
+    fileOut("hundThousand_reverse.txt",rev);
+    fileOut("hundThousand_partUni.txt",partUni);
+    fileOut("hundThousand_partRand.txt",partRand);
     cout << "Hund Thousand Done" << endl;
 }
 
