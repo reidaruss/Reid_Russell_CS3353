@@ -1,6 +1,7 @@
 #include "datagen.h"
 #include "bubble.h"
 #include "insertion.h"
+#include "merge.h"
 
 //remove
 #include <fstream>
@@ -15,7 +16,7 @@ int main()
 
     //REMOVE
     ifstream infile;
-    //infile.open("../lab1/data/unsorted/thousand_random.txt");
+    infile.open("../lab1/data/unsorted/ten_random.txt");
     //infile.open("../lab1/data/unsorted/thousand_partUni.txt");
     //infile.open("../lab1/data/unsorted/thousand_partRand.txt");
     //infile.open("../lab1/data/unsorted/thousand_reverse.txt");
@@ -28,12 +29,16 @@ int main()
         infile >> num;
         arr.push_back(num);
     }
-    cout << "BUBBLE:::::::::" <<endl;
-    Bubble b;
-    b.execute(arr);
-    cout << "INSERTION::::::::::::::::::::::::::::::::::::::::" << endl;
-    Insertion i;
-    i.execute(arr);
+//    cout << "BUBBLE:::::::::" <<endl;
+//    Bubble b;
+//    b.execute(arr);
+//    cout << "INSERTION::::::::::::::::::::::::::::::::::::::::" << endl;
+//    Insertion i;
+//    i.execute(arr);
+    cout << "MERRRRRGGGGGGE::::::::::::::" << endl;
+    Merge m;
+    m.execute(arr);
+
     //REMOVE
 
     return 0;
