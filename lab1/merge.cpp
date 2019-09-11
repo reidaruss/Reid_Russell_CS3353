@@ -5,54 +5,46 @@ Merge::Merge()
 
 }
 
-void Merge::swapVals(int &a, int &b)
-{
-    int temp;
-    temp = a;
-    a = b;
-    b = temp;
-}
 
-void Merge::merge(vector<int> &arr, int l, int m, int r)
+void Merge::merge(vector<int> &arr, int p, int q, int r)
 {
     int nl;
     int nr;
-    nl = m-l+1;
-    nr = r-m;
-
+    nl = q-p+1;
+    nr = r-q;
+    int i,j;
     int left[nl];
     int right[nr];
 
-    for(int i = 0; i < nl; i++)
+    for(i = 0 ; i < nl; i++)
     {
-        left[i] = arr[l+i];
+        left[i] = arr[p+i];
     }
-    for(int i = 0; i < nr; i ++)
+    for(j = 0; j < nr; j ++)
     {
-        right[i] = arr[m+1+i];
+        right[j] = arr[q+1+j];
     }
-    int i = 0;
-    int j = 0;
-    int k = 1;
-
-    while(i<nl && j<nr)
+    i = 0;
+    j = 0;
+    int k;
+    for(k = p; i<nl && j< nr; k++)
     {
-        if(left[i] <= right[j])
+        if(left[i] < right[j])
         {
             arr[k] = left[i];
             i++;
         }
-        else{
+        else {
             arr[k] = right[j];
             j++;
         }
-        k++;
     }
+
     while(i<nl)
     {
         arr[k] = left[i];
-        i++;
         k++;
+        i++;
     }
     while(j<nr)
     {
@@ -63,15 +55,15 @@ void Merge::merge(vector<int> &arr, int l, int m, int r)
 
 }
 
-void Merge::mergeSort(vector<int> &arr, int l, int r)
+void Merge::mergeSort(vector<int> &arr, int p, int r)
 {
-    int m;
-    if(l < r)
+    int q;
+    if(p < r)
     {
-        m = l+(r-l)/2;
-        mergeSort(arr,l,m);
-        mergeSort(arr,m+1,r);
-        merge(arr,l,m,r);
+        q = (p+r)/2;
+        mergeSort(arr,p,q);
+        mergeSort(arr,q+1,r);
+        merge(arr,p,q,r);
     }
 }
 

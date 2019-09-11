@@ -16,7 +16,7 @@ int main()
 
     //REMOVE
     ifstream infile;
-    infile.open("../lab1/data/unsorted/ten_random.txt");
+    //infile.open("../lab1/data/unsorted/thousand_random.txt");
     //infile.open("../lab1/data/unsorted/thousand_partUni.txt");
     //infile.open("../lab1/data/unsorted/thousand_partRand.txt");
     //infile.open("../lab1/data/unsorted/thousand_reverse.txt");

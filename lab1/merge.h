@@ -12,9 +12,8 @@ class Merge
 public:
     Merge();
 
-    void merge(vector<int>& arr,int l, int m, int r);
-    void swapVals(int& a, int& b);
-    void mergeSort(vector<int>& arr, int l, int r);
+    void merge(vector<int>& arr,int p, int q, int r);
+    void mergeSort(vector<int>& arr, int p, int r);
     void print(vector<int>& arr);
     void execute(vector<int> arr);
 
