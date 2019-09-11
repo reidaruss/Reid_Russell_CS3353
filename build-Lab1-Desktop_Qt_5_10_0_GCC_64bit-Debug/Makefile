@@ -225,6 +225,7 @@ DIST          = ../../../../Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/spec_post.prf \
+		../lab1/.qmake.stash \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -240,6 +241,7 @@ DIST          = ../../../../Qt/5.10.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/lex.prf \
 		../lab1/Lab1.pro algorithm.h \
 		bubble.h \
+		datagen.h \
 		insertion.h \
 		merge.h \
 		sort.h ../lab1/bubble.cpp \
@@ -422,6 +424,7 @@ Makefile: ../lab1/Lab1.pro ../../../../Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.10.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -600,6 +603,7 @@ Makefile: ../lab1/Lab1.pro ../../../../Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.
 ../../../../Qt/5.10.0/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt/5.10.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.10.0/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt/5.10.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -660,7 +664,7 @@ compiler_clean:
 bubble.o: ../lab1/bubble.cpp ../lab1/bubble.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bubble.o ../lab1/bubble.cpp
 
-datagen.o: ../lab1/datagen.cpp 
+datagen.o: ../lab1/datagen.cpp ../lab1/datagen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datagen.o ../lab1/datagen.cpp
 
 insertion.o: ../lab1/insertion.cpp ../lab1/insertion.h

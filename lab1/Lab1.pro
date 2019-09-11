@@ -14,6 +14,7 @@ SOURCES += \
 HEADERS += \
     algorithm.h \
     bubble.h \
+    datagen.h \
     insertion.h \
     merge.h \
     sort.h
