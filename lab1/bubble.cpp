@@ -37,5 +37,5 @@ void Bubble::printArray(vector<int>& arr)
 void Bubble::execute(vector<int> arr)
 {
     bubbleSort(arr);
-    printArray(arr);
+    //printArray(arr);
 }

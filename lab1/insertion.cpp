@@ -33,5 +33,5 @@ void Insertion::printArray(vector<int> arr)
 void Insertion::execute(vector<int> arr)
 {
     insertionSort(arr);
-    printArray(arr);
+    //printArray(arr);
 }

@@ -22,7 +22,7 @@ Sort::Sort()
 
 void Sort::load(string filePath)
 {
-    cout << "loading"<< endl;
+    cout << "loading: "<< filePath <<endl;
     data.clear();
     ifstream infile;
     int size;
@@ -35,16 +35,6 @@ void Sort::load(string filePath)
         infile >> num;
         data.push_back(num);
     }
-
-//    cout << "BUBBLE:::::::::" <<endl;
-//    Bubble b;
-//    b.execute(arr);
-//    cout << "INSERTION::::::::::::::::::::::::::::::::::::::::" << endl;
-//    Insertion i;
-//    i.execute(arr);
-//    cout << "MERRRRRGGGGGGE::::::::::::::" << endl;
-//    Merge m;
-//    m.execute(arr);
 
 }
 
@@ -61,14 +51,17 @@ void Sort::execute()
         switch (sortAlgo) {
 
         case 0:
+            cout << "Bubble" << endl;
             load(file);
             b.execute(data);
             break;
         case 1:
+            cout << "insertion"<<endl;
             load(file);
             ins.execute(data);
             break;
         case 2:
+            cout << "merge"<<endl;
             load(file);
             m.execute(data);
             break;
@@ -87,7 +80,6 @@ void Sort::display()
 void Sort::select(int n)
 {
     sortAlgo = n;
-
 }
 
 void Sort::save()

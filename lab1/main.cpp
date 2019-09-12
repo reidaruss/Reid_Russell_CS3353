@@ -17,12 +17,9 @@ int main()
     Algorithm * driver = new Sort();
     for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)
     {
-        for(int j = 0; j < 16; j++)
-        {
-            //driver->load();
-            driver->execute();
-            driver->stats();
-        }
+        driver->select(i);
+        driver->execute();
+        driver->stats();
     }
 
 

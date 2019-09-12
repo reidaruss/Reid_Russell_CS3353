@@ -78,5 +78,5 @@ void Merge::print(vector<int>& arr)
 void Merge::execute(vector<int> arr)
 {
     mergeSort(arr,0,arr.size()-1);
-    print(arr);
+    //print(arr);
 }
