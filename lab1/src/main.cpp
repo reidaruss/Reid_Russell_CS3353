@@ -11,15 +11,12 @@ int main()
     //datagen data;
     //data.execute();
 
-    //REMOVE
-
-    //REMOVE
-    Algorithm * driver = new Sort();
+    Algorithm * d = new Sort();
     for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)
     {
-        driver->select(i);
-        driver->execute();
-        driver->stats();
+        d->select(i);
+        d->execute();
+        d->stats();
     }
 
 

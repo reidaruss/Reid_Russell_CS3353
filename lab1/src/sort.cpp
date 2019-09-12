@@ -5,24 +5,24 @@ Sort::Sort()
     fileNames.push_back("../lab1/src/data/unsorted/ten_random.txt");
     fileNames.push_back("../lab1/src/data/unsorted/ten_reverse.txt");
     fileNames.push_back("../lab1/src/data/unsorted/ten_partUni.txt");
-    fileNames.push_back("../lab1/src/data/unsorted/ten_reverse.txt");
+    fileNames.push_back("../lab1/src/data/unsorted/ten_partRand.txt");
     fileNames.push_back("../lab1/src/data/unsorted/thousand_random.txt");
     fileNames.push_back("../lab1/src/data/unsorted/thousand_reverse.txt");
     fileNames.push_back("../lab1/src/data/unsorted/thousand_partUni.txt");
-    fileNames.push_back("../lab1/src/data/unsorted/thousand_reverse.txt");
+    fileNames.push_back("../lab1/src/data/unsorted/thousand_partRand.txt");
     fileNames.push_back("../lab1/src/data/unsorted/tenThousand_random.txt");
     fileNames.push_back("../lab1/src/data/unsorted/tenThousand_reverse.txt");
     fileNames.push_back("../lab1/src/data/unsorted/tenThousand_partUni.txt");
-    fileNames.push_back("../lab1/src/data/unsorted/tenThousand_reverse.txt");
+    fileNames.push_back("../lab1/src/data/unsorted/tenThousand_partRand.txt");
     fileNames.push_back("../lab1/src/data/unsorted/hundThousand_random.txt");
     fileNames.push_back("../lab1/src/data/unsorted/hundThousand_reverse.txt");
     fileNames.push_back("../lab1/src/data/unsorted/hundThousand_partUni.txt");
-    fileNames.push_back("../lab1/src/data/unsorted/hundThousand_reverse.txt");
+    fileNames.push_back("../lab1/src/data/unsorted/hundThousand_partRand.txt");
 }
 
 void Sort::load(string filePath)
 {
-    cout << "loading: "<< filePath <<endl;
+    //cout << "loading: "<< filePath <<endl;
     data.clear();
     ifstream infile;
     int size;
@@ -35,12 +35,13 @@ void Sort::load(string filePath)
         infile >> num;
         data.push_back(num);
     }
-
+    infile.close();
 }
 
 void Sort::execute()
 {
-    cout << "executing" << endl;
+    time.clear();
+    //cout << "executing" << endl;
     Bubble b;
     Insertion ins;
     Merge m;
@@ -51,19 +52,19 @@ void Sort::execute()
         switch (sortAlgo) {
 
         case 0:
-            cout << "Bubble" << endl;
+            //cout << "Bubble" << endl;
             load(file);
-            b.execute(data);
+            time.push_back(b.execute(data));
             break;
         case 1:
-            cout << "insertion"<<endl;
+            //cout << "insertion"<<endl;
             load(file);
-            ins.execute(data);
+            time.push_back(ins.execute(data));
             break;
         case 2:
-            cout << "merge"<<endl;
+            //cout << "merge"<<endl;
             load(file);
-            m.execute(data);
+            time.push_back(m.execute(data));
             break;
         case 3:
             break;
@@ -89,7 +90,30 @@ void Sort::save()
 
 void Sort::stats()
 {
-
+    if(sortAlgo == 0)
+    {
+        cout << "Bubble:" << endl;
+        for(int i = 0; i < time.size(); i++)
+        {
+            cout << fileNames[i] << ": "<< time[i].count() << endl;
+        }
+    }
+    else if(sortAlgo == 1)
+    {
+        cout << "Insertion:" << endl;
+        for(int i = 0; i < time.size(); i++)
+        {
+            cout << fileNames[i] << ": "<< time[i].count() << endl;
+        }
+    }
+    else if(sortAlgo == 2)
+    {
+        cout << "Merge:" << endl;
+        for(int i = 0; i < time.size(); i++)
+        {
+            cout << fileNames[i] << ": "<< time[i].count() << endl;
+        }
+    }
 }
 
 void Sort::configure()

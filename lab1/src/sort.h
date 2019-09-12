@@ -9,6 +9,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ private:
     int sortAlgo;
     vector<string> fileNames;
     vector<int> data;
+    vector<chrono::duration<double>> time;
 
 
 

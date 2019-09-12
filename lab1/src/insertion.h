@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <chrono>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ public:
 
     void insertionSort(vector<int>& arr);
     void printArray(vector<int> arr);
-    void execute(vector<int> arr);
+    chrono::duration<double> execute(vector<int> arr);
 
 };
 

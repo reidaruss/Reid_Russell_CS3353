@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ public:
     void swap(int *xp, int *yp);
     void bubbleSort(vector<int>& arr);
     void printArray(vector<int>& arr);
-    void execute(vector<int> arr);
+    chrono::duration<double> execute(vector<int> arr);
 };
 
 #endif // BUBBLE_H

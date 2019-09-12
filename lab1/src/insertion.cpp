@@ -30,8 +30,12 @@ void Insertion::printArray(vector<int> arr)
     }
 }
 
-void Insertion::execute(vector<int> arr)
+chrono::duration<double> Insertion::execute(vector<int> arr)
 {
+    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
     insertionSort(arr);
+    chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
     //printArray(arr);
+    chrono::duration<double> time = chrono::duration_cast<chrono::duration<double>>(t2-t1);
+    return time;
 }
