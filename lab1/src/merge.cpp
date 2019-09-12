@@ -6,6 +6,7 @@ Merge::Merge()
 }
 
 
+//This function merges the seperated vector back together while performing the check for sorting.
 void Merge::merge(vector<int> &arr, int p, int q, int r)
 {
     int nl;
@@ -55,18 +56,20 @@ void Merge::merge(vector<int> &arr, int p, int q, int r)
 
 }
 
+//Controls the higher level of merge sort
 void Merge::mergeSort(vector<int> &arr, int p, int r)
 {
     int q;
     if(p < r)
     {
-        q = (p+r)/2;
-        mergeSort(arr,p,q);
+        q = (p+r)/2;            // q is midpoint
+        mergeSort(arr,p,q);     //splitting vector
         mergeSort(arr,q+1,r);
-        merge(arr,p,q,r);
+        merge(arr,p,q,r);       //merging everything back together
     }
 }
 
+//Used for debugging purposes
 void Merge::print(vector<int>& arr)
 {
     for(int i = 0; i < arr.size(); i++)
@@ -75,6 +78,7 @@ void Merge::print(vector<int>& arr)
     }
 }
 
+//Runs merge sort and returns the runtime while also returning the sorted vector by reference to Sort::execute()
 chrono::duration<double> Merge::execute(vector<int>& arr)
 {
     chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();

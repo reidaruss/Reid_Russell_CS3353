@@ -6,6 +6,7 @@ Bubble::Bubble()
 
 }
 
+//Performs the swapping for bubble sort
 void Bubble::swap(int *xp, int *yp)
 {
     int temp = *xp;
@@ -13,6 +14,7 @@ void Bubble::swap(int *xp, int *yp)
     *yp = temp;
 }
 
+//Performs the comparisons for bubble sort
 void Bubble::bubbleSort(vector<int>& arr)
 {
     int i , j;
@@ -26,6 +28,7 @@ void Bubble::bubbleSort(vector<int>& arr)
     }
 }
 
+//Used for debuggin purposes
 void Bubble::printArray(vector<int>& arr)
 {
     for(int i = 0; i < arr.size(); i++)
@@ -34,6 +37,7 @@ void Bubble::printArray(vector<int>& arr)
     }
 }
 
+//Runs bubble sort and returns the runtime while also returning the sorted vector by reference to Sort::execute()
 chrono::duration<double> Bubble::execute(vector<int>& arr)
 {
     chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();

@@ -1,9 +1,13 @@
+// Reid Russell
+// CS 3353
+// Lab 1 Sorting Algorithms
+//
+//Filepaths are in Sort constructor.
+//
 #include "datagen.h"
 #include "algorithm.h"
 #include "sort.h"
-//remove
 
-//remove
 
 int main()
 {

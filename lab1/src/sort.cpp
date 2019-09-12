@@ -1,5 +1,6 @@
 #include "sort.h"
 
+//Stores fileNames into vector to be looped through for loading datasets.
 Sort::Sort()
 {
     fileNames.push_back("../lab1/src/data/unsorted/ten_random.txt");
@@ -20,6 +21,7 @@ Sort::Sort()
     fileNames.push_back("../lab1/src/data/unsorted/hundThousand_partRand.txt");
 }
 
+//loads individual datasets into data
 void Sort::load(string filePath)
 {
     //cout << "loading: "<< filePath <<endl;
@@ -38,6 +40,8 @@ void Sort::load(string filePath)
     infile.close();
 }
 
+//Takes in enum case from main, executes each algorithm on every dataset
+//and records timing for stats.
 void Sort::execute()
 {
     time.clear();
@@ -76,6 +80,7 @@ void Sort::execute()
     }
 }
 
+//Prints the whole sorted solution.
 void Sort::display()
 {
     for(int i = 0; i < big_data.size();i++)
@@ -85,11 +90,14 @@ void Sort::display()
 
 }
 
+//takes in enum from main and sets algorithm type variable
 void Sort::select(int n)
 {
     sortAlgo = n;
 }
 
+//adds newly sorted datasets to the large dataset that is used in
+//display() and save()
 void Sort::log()
 {
     for(int i = 0; i < data.size();i++)
@@ -98,6 +106,7 @@ void Sort::log()
     }
 }
 
+//Saves the large vector will sorted solution to file.
 void Sort::save()
 {
 
@@ -112,6 +121,8 @@ void Sort::save()
 
 }
 
+//Prints out stats for each Sorting algorithm and every dataset
+//for each whith the associated dataset filename.
 void Sort::stats()
 {
     if(sortAlgo == 0)
@@ -140,6 +151,7 @@ void Sort::stats()
     }
 }
 
+//For future use.
 void Sort::configure()
 {
 

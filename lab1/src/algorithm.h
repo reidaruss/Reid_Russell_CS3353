@@ -12,6 +12,7 @@ public:
     virtual void save() = 0;
     virtual void stats() = 0;
     virtual void configure() = 0;
+
     enum algos{BUBBLE=0,INSERTION,MERGE,LAST};
 
 };
