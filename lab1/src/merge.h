@@ -16,7 +16,7 @@ public:
     void merge(vector<int>& arr,int p, int q, int r);
     void mergeSort(vector<int>& arr, int p, int r);
     void print(vector<int>& arr);
-    chrono::duration<double> execute(vector<int> arr);
+    chrono::duration<double> execute(vector<int>& arr);
 
 };
 

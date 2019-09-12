@@ -15,7 +15,7 @@ public:
     void swap(int *xp, int *yp);
     void bubbleSort(vector<int>& arr);
     void printArray(vector<int>& arr);
-    chrono::duration<double> execute(vector<int> arr);
+    chrono::duration<double> execute(vector<int>& arr);
 };
 
 #endif // BUBBLE_H

@@ -75,7 +75,7 @@ void Merge::print(vector<int>& arr)
     }
 }
 
-chrono::duration<double> Merge::execute(vector<int> arr)
+chrono::duration<double> Merge::execute(vector<int>& arr)
 {
     chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
     mergeSort(arr,0,arr.size()-1);

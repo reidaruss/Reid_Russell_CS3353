@@ -34,7 +34,7 @@ void Bubble::printArray(vector<int>& arr)
     }
 }
 
-chrono::duration<double> Bubble::execute(vector<int> arr)
+chrono::duration<double> Bubble::execute(vector<int>& arr)
 {
     chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
     bubbleSort(arr);

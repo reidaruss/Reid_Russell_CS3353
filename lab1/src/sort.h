@@ -20,6 +20,7 @@ private:
     vector<string> fileNames;
     vector<int> data;
     vector<chrono::duration<double>> time;
+    vector<int> big_data;
 
 
 
@@ -33,6 +34,7 @@ public:
     void select(int n);
     void configure();
     void stats();
+    void log();
 };
 
 #endif // SORT_H

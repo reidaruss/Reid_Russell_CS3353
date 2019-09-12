@@ -16,7 +16,7 @@ public:
 
     void insertionSort(vector<int>& arr);
     void printArray(vector<int> arr);
-    chrono::duration<double> execute(vector<int> arr);
+    chrono::duration<double> execute(vector<int>& arr);
 
 };
 

@@ -55,16 +55,19 @@ void Sort::execute()
             //cout << "Bubble" << endl;
             load(file);
             time.push_back(b.execute(data));
+            log();
             break;
         case 1:
             //cout << "insertion"<<endl;
             load(file);
             time.push_back(ins.execute(data));
+            log();
             break;
         case 2:
             //cout << "merge"<<endl;
             load(file);
             time.push_back(m.execute(data));
+            log();
             break;
         case 3:
             break;
@@ -75,7 +78,11 @@ void Sort::execute()
 
 void Sort::display()
 {
-    cout << "displaying" << endl;
+    for(int i = 0; i < big_data.size();i++)
+    {
+        cout << big_data[i] << endl;
+    }
+
 }
 
 void Sort::select(int n)
@@ -83,8 +90,25 @@ void Sort::select(int n)
     sortAlgo = n;
 }
 
+void Sort::log()
+{
+    for(int i = 0; i < data.size();i++)
+    {
+        big_data.push_back(data[i]);
+    }
+}
+
 void Sort::save()
 {
+
+    ofstream fileout;
+    fileout.open("../lab1/src/data/sorted/output.txt");
+
+    for(int i = 0; i < big_data.size(); i++)
+    {
+        fileout << big_data[i] << endl;
+    }
+    fileout.close();
 
 }
 

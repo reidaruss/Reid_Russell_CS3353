@@ -17,6 +17,7 @@ void datagen::fileOut(string file_name,vector<int> arr)
     {
         fileout << arr[i] << endl;
     }
+    fileout.close();
 }
 
 void datagen::randomize(vector<int>& arr,int SIZE)
