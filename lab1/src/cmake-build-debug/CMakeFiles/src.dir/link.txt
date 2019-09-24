@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/src.dir/bubble.cpp.o CMakeFiles/src.dir/datagen.cpp.o CMakeFiles/src.dir/insertion.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/merge.cpp.o CMakeFiles/src.dir/sort.cpp.o  -o src 
