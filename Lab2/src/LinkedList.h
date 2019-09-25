@@ -14,6 +14,9 @@ class ListNode
 {
     template<class U> friend class LinkedList;  //LISTNODE
 private:
+//TODO : Make a vector for children that holds node pointers to each child node.
+//TODO : Add new addConnection() method to add a connection to a child
+//TODO : Remove old next and prev pointers
     ListNode<T>* next;
     ListNode<T>* prev;
     T payload;

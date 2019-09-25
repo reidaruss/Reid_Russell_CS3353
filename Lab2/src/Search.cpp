@@ -10,6 +10,7 @@ Search::Search()
 }
 
 
+//TODO : Add file input and generation of graph
 void Search::load(string filePath)
 {
 
