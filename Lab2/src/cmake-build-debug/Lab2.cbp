@@ -104,9 +104,6 @@
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Dijkstra.h">
 			<Option target="Lab2"/>
 		</Unit>
-		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.cpp">
-			<Option target="Lab2"/>
-		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.h">
 			<Option target="Lab2"/>
 		</Unit>

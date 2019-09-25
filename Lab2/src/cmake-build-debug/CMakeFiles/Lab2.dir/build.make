@@ -83,22 +83,9 @@ CMakeFiles/Lab2.dir/Search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab2.dir/Search.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Search.cpp -o CMakeFiles/Lab2.dir/Search.cpp.s
 
-CMakeFiles/Lab2.dir/LinkedList.cpp.o: CMakeFiles/Lab2.dir/flags.make
-CMakeFiles/Lab2.dir/LinkedList.cpp.o: ../LinkedList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab2.dir/LinkedList.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab2.dir/LinkedList.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.cpp
-
-CMakeFiles/Lab2.dir/LinkedList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab2.dir/LinkedList.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.cpp > CMakeFiles/Lab2.dir/LinkedList.cpp.i
-
-CMakeFiles/Lab2.dir/LinkedList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab2.dir/LinkedList.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.cpp -o CMakeFiles/Lab2.dir/LinkedList.cpp.s
-
 CMakeFiles/Lab2.dir/DFS.cpp.o: CMakeFiles/Lab2.dir/flags.make
 CMakeFiles/Lab2.dir/DFS.cpp.o: ../DFS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab2.dir/DFS.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab2.dir/DFS.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab2.dir/DFS.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/DFS.cpp
 
 CMakeFiles/Lab2.dir/DFS.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/Lab2.dir/DFS.cpp.s: cmake_force
 
 CMakeFiles/Lab2.dir/BFS.cpp.o: CMakeFiles/Lab2.dir/flags.make
 CMakeFiles/Lab2.dir/BFS.cpp.o: ../BFS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab2.dir/BFS.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab2.dir/BFS.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab2.dir/BFS.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/BFS.cpp
 
 CMakeFiles/Lab2.dir/BFS.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/Lab2.dir/BFS.cpp.s: cmake_force
 
 CMakeFiles/Lab2.dir/Dijkstra.cpp.o: CMakeFiles/Lab2.dir/flags.make
 CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../Dijkstra.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lab2.dir/Dijkstra.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab2.dir/Dijkstra.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab2.dir/Dijkstra.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Dijkstra.cpp
 
 CMakeFiles/Lab2.dir/Dijkstra.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/Lab2.dir/Dijkstra.cpp.s: cmake_force
 
 CMakeFiles/Lab2.dir/AStar.cpp.o: CMakeFiles/Lab2.dir/flags.make
 CMakeFiles/Lab2.dir/AStar.cpp.o: ../AStar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Lab2.dir/AStar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lab2.dir/AStar.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab2.dir/AStar.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/AStar.cpp
 
 CMakeFiles/Lab2.dir/AStar.cpp.i: cmake_force
@@ -152,7 +139,6 @@ CMakeFiles/Lab2.dir/AStar.cpp.s: cmake_force
 Lab2_OBJECTS = \
 "CMakeFiles/Lab2.dir/main.cpp.o" \
 "CMakeFiles/Lab2.dir/Search.cpp.o" \
-"CMakeFiles/Lab2.dir/LinkedList.cpp.o" \
 "CMakeFiles/Lab2.dir/DFS.cpp.o" \
 "CMakeFiles/Lab2.dir/BFS.cpp.o" \
 "CMakeFiles/Lab2.dir/Dijkstra.cpp.o" \
@@ -163,14 +149,13 @@ Lab2_EXTERNAL_OBJECTS =
 
 Lab2: CMakeFiles/Lab2.dir/main.cpp.o
 Lab2: CMakeFiles/Lab2.dir/Search.cpp.o
-Lab2: CMakeFiles/Lab2.dir/LinkedList.cpp.o
 Lab2: CMakeFiles/Lab2.dir/DFS.cpp.o
 Lab2: CMakeFiles/Lab2.dir/BFS.cpp.o
 Lab2: CMakeFiles/Lab2.dir/Dijkstra.cpp.o
 Lab2: CMakeFiles/Lab2.dir/AStar.cpp.o
 Lab2: CMakeFiles/Lab2.dir/build.make
 Lab2: CMakeFiles/Lab2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Lab2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Lab2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

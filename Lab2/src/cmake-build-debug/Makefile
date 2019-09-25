@@ -231,33 +231,6 @@ Dijkstra.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/Dijkstra.cpp.s
 .PHONY : Dijkstra.cpp.s
 
-LinkedList.o: LinkedList.cpp.o
-
-.PHONY : LinkedList.o
-
-# target to build an object file
-LinkedList.cpp.o:
-	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/LinkedList.cpp.o
-.PHONY : LinkedList.cpp.o
-
-LinkedList.i: LinkedList.cpp.i
-
-.PHONY : LinkedList.i
-
-# target to preprocess a source file
-LinkedList.cpp.i:
-	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/LinkedList.cpp.i
-.PHONY : LinkedList.cpp.i
-
-LinkedList.s: LinkedList.cpp.s
-
-.PHONY : LinkedList.s
-
-# target to generate assembly for a file
-LinkedList.cpp.s:
-	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/LinkedList.cpp.s
-.PHONY : LinkedList.cpp.s
-
 Search.o: Search.cpp.o
 
 .PHONY : Search.o
@@ -333,9 +306,6 @@ help:
 	@echo "... Dijkstra.o"
 	@echo "... Dijkstra.i"
 	@echo "... Dijkstra.s"
-	@echo "... LinkedList.o"
-	@echo "... LinkedList.i"
-	@echo "... LinkedList.s"
 	@echo "... Search.o"
 	@echo "... Search.i"
 	@echo "... Search.s"

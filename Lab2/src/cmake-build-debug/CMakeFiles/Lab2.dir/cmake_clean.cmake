@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Lab2.dir/main.cpp.o"
   "CMakeFiles/Lab2.dir/Search.cpp.o"
-  "CMakeFiles/Lab2.dir/LinkedList.cpp.o"
   "CMakeFiles/Lab2.dir/DFS.cpp.o"
   "CMakeFiles/Lab2.dir/BFS.cpp.o"
   "CMakeFiles/Lab2.dir/Dijkstra.cpp.o"
