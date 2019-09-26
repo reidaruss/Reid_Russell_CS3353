@@ -13,6 +13,7 @@ CMakeFiles/Lab2.dir/DFS.cpp.o: ../DFS.h
 CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../Dijkstra.cpp
 CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../Dijkstra.h
 
+CMakeFiles/Lab2.dir/Search.cpp.o: ../LinkedList.h
 CMakeFiles/Lab2.dir/Search.cpp.o: ../Search.cpp
 CMakeFiles/Lab2.dir/Search.cpp.o: ../Search.h
 CMakeFiles/Lab2.dir/Search.cpp.o: ../algorithm.h

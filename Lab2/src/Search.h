@@ -6,19 +6,22 @@
 #define LAB2_SEARCH_H
 
 #include "algorithm.h"
-
+#include "LinkedList.h"
 
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
 #include <chrono>
+#include <sstream>
+
 
 using namespace std;
 
 class Search :public Algorithm{
 private:
     int searchAlgo;
+    LinkedList<int>* graph;
 
 
 public:

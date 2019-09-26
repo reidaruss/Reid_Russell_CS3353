@@ -93,6 +93,8 @@ LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& rhs)
     }
 }
 
+
+
 template <typename T>
 T& LinkedList<T>::operator[](int i)
 {
@@ -316,13 +318,10 @@ void LinkedList<T>::resetIterator()
 template <typename T>
 T LinkedList<T>::getNext()  //return type was LinkedList<T>
 {
-    if(nextExists())
-    {
+    if(nextExists()) {
         curr = curr->next;
         return curr->payload;
     }
-    else
-        return "end";
 
 }
 

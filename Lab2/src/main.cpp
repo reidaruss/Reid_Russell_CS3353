@@ -11,7 +11,9 @@ int main() {
     graph->addBack(20);
     graph->addBack(30);
 
-
+    Search s;
+    s.load("nothing");
+    s.display();
 //
 //    Algorithm * d = new Search();
 //    for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)
