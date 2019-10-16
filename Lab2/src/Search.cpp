@@ -12,8 +12,11 @@ Search::Search()
 
 void Search::load(string filePath)
 {
+
+    //::::::::::::::::Read in graph and build graphs
     if(filePath == "../SampleGraph/graph.txt") {
-        vector<vector<int> > children;
+        //::::::::::::::::::::::::::::::::::::::: Build graph (Adjacency List)
+        vector<vector<int> > children; // used for assigning pointers to paths after nodes are read in
         int counter = 0;
         ifstream file;
         file.open("../SampleGraph/graph.txt");
@@ -22,16 +25,17 @@ void Search::load(string filePath)
         if (file.is_open()) {
             while (!file.eof()) {
                 vector<int> child;
-                getline(file, line, '\n');
+                getline(file, line, '\n');  //Get first line
                 istringstream iss(line);
                 string s = "";
-                getline(iss, item, ',');
+                getline(iss, item, ',');    //Get First element (src node)
                 ListNode<int> node(stoi(item));
                 if(nodes.size() == 0)
                 {
                     nodes.push_back(node);
                 }
-                for (int i = 0; i < nodes.size(); i++) {
+                // TODO : Clean this up because now there is no reason to check everytime we get the connections only when getting the first element (dont even need to check)
+                for (int i = 0; i < nodes.size(); i++) {    //make sure starting node not in nodes vector already
                     if (nodes[i].getPayload() == stoi(item))
                     {
                         break;
@@ -44,7 +48,7 @@ void Search::load(string filePath)
                 }
 
                 ListNode<int> * src = &node;
-                while (getline(iss, item, ',')) {
+                while (getline(iss, item, ',')) {   //Get all the children, put into children vector
                     for (int i = 0; i < nodes.size(); i++) {
                         if(nodes[i].getPayload() == stoi(item)) {
                             break;
@@ -66,7 +70,7 @@ void Search::load(string filePath)
 
             }
         }
-        ListNode<int> * src = nullptr;
+        ListNode<int> * src = nullptr;  //Loop through nodes vector and assign pointers to children so that path can be built
         ListNode<int> * dest = nullptr;
         for(int i = 0; i < children.size(); i++)
         {
@@ -74,27 +78,49 @@ void Search::load(string filePath)
             {
 
                 int findSrc = i + 1;
-                int findDest = children[i][j];
-                for(int k = 0; k < nodes.size(); k++) {
+                int findDest = children[i][j];  //These are the two path elements we are looking for
+                for(int k = 0; k < nodes.size(); k++) { //Find source
                     if (nodes[k].getPayload() == findSrc) {
                         src = &nodes[k];
                         break;
                     }
                 }
-                for(int k = 0; k < nodes.size(); k++)
+                for(int k = 0; k < nodes.size(); k++)   //Find destination
                 {
                     if(nodes[k].getPayload() == findDest)
                     {
                         dest = &nodes[k];
                     }
                 }
-                Path p(src, dest);
+                Path p(src, dest);  //Create path and add to adjacency list in the correct index
                 graph.add(i, p);
             }
         }
         file.close();
+
+
+        //::::::::::::::::::::::::::::::::: Matrix
+        //Create the nxn matrix- creating it here because now program has number of nodes
+        for(int i = 0; i < nodes.size(); i++)
+        {
+            vector<int> temp(nodes.size());
+            adjMatrix.push_back(temp);
+        }
+
+        //Initially fill matrix with zeros
+        for(int i = 0; i < adjMatrix.size(); i++)
+        {
+            for(int j = 0; j < adjMatrix[i].size(); j++)
+            {
+                adjMatrix[i][j] = 0;
+            }
+
+        }
     }
 
+
+
+// :::::::::::::::::::Read in weights and populate graphs
     if(filePath == "../SampleGraph/weights.txt")
     {
         // TODO : Read in the weights into subpath objects
@@ -106,7 +132,7 @@ void Search::load(string filePath)
         {
             while (!file.eof())
             {
-                getline(file, line, '\n');
+                getline(file, line, '\n');  //Get source, destination and weight
                 istringstream iss(line);
                 getline(iss, item, ',');
                 int source = stoi(item);
@@ -115,6 +141,13 @@ void Search::load(string filePath)
                 getline(iss, item, ',');
                 int weight = stoi(item);
 
+
+
+
+                //Assign weight for matrix (do -1 for indexing purposes)
+                adjMatrix[source-1][destination-1] = weight;
+
+                //Find each path associated with a weight and assign.
                 for(int i = 0; i < graph.getSize(); i++)
                 {
                     for(int j = 0; j < graph.getInnerSize(i); j++)
@@ -135,6 +168,7 @@ void Search::load(string filePath)
 
     }
 
+    //:::::::::::::::::::Assign node positions
     if(filePath == "../SampleGraph/positions.txt")
     {
         ifstream file;
@@ -145,7 +179,7 @@ void Search::load(string filePath)
         {
             while (!file.eof())
             {
-                getline(file, line, '\n');
+                getline(file, line, '\n');  //get the node to assign position to
                 istringstream iss(line);
                 getline(iss, item, ',');
                 int find = stoi(item);
@@ -156,7 +190,7 @@ void Search::load(string filePath)
                 getline(iss, item, ',');
                 int z = stoi(item);
 
-                for(int i = 0; i < nodes.size(); i++)
+                for(int i = 0; i < nodes.size(); i++)   //assign position
                 {
                     if(nodes[i].getPayload() == find)
                     {
@@ -200,6 +234,15 @@ void Search::display()
     {
         cout << "Node: "<< nodes[i].getPayload() << endl;
         cout << "Position: " << nodes[i].getPos()[0] << "," << nodes[i].getPos()[1] << "," << nodes[i].getPos()[2] << endl << endl;
+    }
+
+    for(int i = 0; i < adjMatrix.size(); i++)
+    {
+        for(int j = 0; j < adjMatrix[i].size(); j++)
+        {
+            cout << adjMatrix[i][j] << " ";
+        }
+        cout << endl;
     }
 }
 
