@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lab2.dir/BFS.cpp.o"
   "CMakeFiles/Lab2.dir/Dijkstra.cpp.o"
   "CMakeFiles/Lab2.dir/AStar.cpp.o"
+  "CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.o"
+  "CMakeFiles/Lab2.dir/Path.cpp.o"
   "Lab2.pdb"
   "Lab2"
 )

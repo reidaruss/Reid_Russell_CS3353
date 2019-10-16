@@ -7,6 +7,9 @@
 
 #include "algorithm.h"
 #include "LinkedList.h"
+#include "AdjacencyList.h"
+#include "Path.h"
+
 
 #include <iostream>
 #include <fstream>
@@ -21,7 +24,9 @@ using namespace std;
 class Search :public Algorithm{
 private:
     int searchAlgo;
-    LinkedList<int>* graph;
+    AdjacencyList<Path> graph;
+    vector<ListNode<int> > nodes;
+
 
 
 public:

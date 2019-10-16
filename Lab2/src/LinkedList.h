@@ -6,6 +6,8 @@
 #define LAB2_LINKEDLIST_H
 
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -19,9 +21,16 @@ private:
 //TODO : Remove old next and prev pointers
     ListNode<T>* next;
     ListNode<T>* prev;
+    //vector<ListNode<T>*> children;
     T payload;
+    vector<int> position;
+
 public:
     ListNode(T val);
+
+    T getPayload(){return payload;}
+    void setPosition(int x, int y, int z) {position.push_back(x); position.push_back(y); position.push_back(z);}
+    vector<int> getPos(){ return position;}
 
 };
 
@@ -42,6 +51,9 @@ public:
     void insert(T val);
     void insertAt(int pos, T val);
     void removeAt(int pos);
+
+    //void addChild();
+
     void removeFront();
     void removeBack();
     void addBack(T val);
@@ -54,7 +66,7 @@ public:
     bool isEmpty();
     bool nextExists();
     string getCurr();
-    // ~LinkedList();
+     //~LinkedList();
 
 
 
@@ -353,8 +365,8 @@ string LinkedList<T>::getCurr()
 //        }
 //        delete temp;
 //    }
-
-
+//
+//
 //}
 
 

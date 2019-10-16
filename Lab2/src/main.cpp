@@ -2,19 +2,24 @@
 #include "Search.h"
 #include "algorithm.h"
 #include "LinkedList.h"
+#include "AdjacencyList.h"
+
+
+// TODO : Figure out Adj matrix, build from input
+// TODO : MAKE SURE TO REFERENCE BFS DFS DIJSTRA AND A* AND MAKE SURE EACH TAKES IN MATRIX AND LIST AND RETURNS PATH FROM START TO DEST
+// TODO : Put some effort into the report
+
+
 
 int main() {
 
-    LinkedList<int>* graph = new LinkedList<int>();
-
-    graph->addBack(10);
-    graph->addBack(20);
-    graph->addBack(30);
 
     Search s;
-    s.load("nothing");
+    s.load("../SampleGraph/graph.txt");
+    s.load("../SampleGraph/weights.txt");
+    s.load("../SampleGraph/positions.txt");
     s.display();
-//
+
 //    Algorithm * d = new Search();
 //    for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)
 //    {
