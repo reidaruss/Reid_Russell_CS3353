@@ -9,7 +9,6 @@ Search::Search()
     fileNames.push_back("../SampleGraph/graph.txt");
     fileNames.push_back("../SampleGraph/weights.txt");
     fileNames.push_back("../SampleGraph/positions.txt");
-
 }
 
 
@@ -218,13 +217,16 @@ void Search::load(string filePath)
 
 void Search::execute(int start, int end)
 {
-    string file = "";
-    for(int i = 0; i < fileNames.size();i++) {
-        file = fileNames[i];
-        load(file);
+    if(!loadedF)
+    {
+        string file = "";
+        for (int i = 0; i < fileNames.size(); i++) {
+            file = fileNames[i];
+            load(file);
+        }
+        loadedF = true;
     }
-    //time.clear();
-    // TODO : DO THIS LATER
+
 
     vector<vector<float> >* mPointer = &adjMatrix;
 
@@ -236,90 +238,46 @@ void Search::execute(int start, int end)
     vector<Path> dfsP;
     vector<Path> dfsPM;
 
+    chrono::high_resolution_clock::time_point t1;
+    chrono::high_resolution_clock::time_point t2;
+    chrono::high_resolution_clock::time_point t3;
+    chrono::high_resolution_clock::time_point t4;
+
+
         switch (searchAlgo) {
 
             case 0:
-                //cout << "Bubble" << endl;
 
-                //time.push_back(.execute(data));
+                t1 = chrono::high_resolution_clock::now();
                 p= bfs.BFSAdjList(&graph, nodes.size());
-                //log();
+                t2 = chrono::high_resolution_clock::now();
+                bfsPath = p;
+                bfsTime = chrono::duration_cast<chrono::duration<double>>(t2-t1);
 
+                t3 = chrono::high_resolution_clock::now();
                 pM = bfs.BFSMatrix(mPointer, nodes.size());
+                t4 = chrono::high_resolution_clock::now();
+                bfsPathMat = pM;
+                bfsTimeMat = chrono::duration_cast<chrono::duration<double>>(t4-t3);
                 break;
 
             case 1:
-
+                t1 = chrono::high_resolution_clock::now();
                 dfsP = dfs.DFSAdjList(&graph, nodes.size());
+                t2 = chrono::high_resolution_clock::now();
+                dfsPath = dfsP;
+                dfsTime = chrono::duration_cast<chrono::duration<double>>(t2-t1);
+
+                t3 = chrono::high_resolution_clock::now();
                 dfsPM = dfs.DFSMatrix(mPointer, nodes.size());
+                t4 = chrono::high_resolution_clock::now();
+                dfsPathMat = dfsPM;
+                dfsTimeMat = chrono::duration_cast<chrono::duration<double>>(t2-t1);
                 break;
 
-
         }
-        cout << "BFS : " << endl;
-        cout << "AdjacencyList:" << endl;
-    for(int i = 0; i< p.size(); i++)
-    {
-        cout << "Hop: " << i << endl;
-        p[i].printPath();
-    }
-    cout << endl;
-    cout << "Matrix" << endl;
-    for(int i = 0; i< pM.size(); i++)
-    {
-        cout << "Hop: " << i << endl;
-        pM[i].printPathMat();
-    }
-    cout << "DFS : " << endl;
-    cout << "AdjacencyList:" << endl;
-    for(int i = 0; i< dfsP.size(); i++)
-    {
-        cout << "Hop: " << i << endl;
-        dfsP[i].printPath();
-    }
-    cout << "Matrix:" << endl;
-    for(int i = 0; i< dfsPM.size(); i++)
-    {
-        cout << "Hop: " << i << endl;
-        dfsPM[i].printPathMat();
-    }
 
 
-
-
-//    //cout << "executing" << endl;
-//    Bubble b;
-//    Insertion ins;
-//    Merge m;
-//    string file = "";
-//    for(int i = 0; i < fileNames.size();i++)
-//    {
-//        file = fileNames[i];
-//        switch (sortAlgo) {
-//
-//            case 0:
-//                //cout << "Bubble" << endl;
-//                load(file);
-//                time.push_back(b.execute(data));
-//                log();
-//                break;
-//            case 1:
-//                //cout << "insertion"<<endl;
-//                load(file);
-//                time.push_back(ins.execute(data));
-//                log();
-//                break;
-//            case 2:
-//                //cout << "merge"<<endl;
-//                load(file);
-//                time.push_back(m.execute(data));
-//                log();
-//                break;
-//            case 3:
-//                break;
-//            default:;
-//        }
-//    }
 
 }
 void Search::display()
@@ -374,28 +332,103 @@ void Search::stats()
 {
     if(searchAlgo == 0)
     {
+        int numHops = 0;
+        float cost = 0;
         cout << "BFS Iterative:" << endl;
-        for(int i = 0; i < time.size(); i++)
+        cout << "Adjacency List: " << endl;
+        for(int i = 0; i < bfsPath.size(); i++)
         {
-            cout << fileNames[i] << ": "<< time[i].count() << endl;
+            bfsPath[i].printPath();
+            cout <<" , ";
+            numHops ++;
+            cost += bfsPath[i].getWeight();
         }
-    }
-//    else if(sortAlgo == 1)
-//    {
+        cout << endl;
+        cout << "Number of Hops : " << numHops << endl;
+        cout << "Total Cost     : " << cost << endl;
+        // TODO : Add total distance
+        // TODO : Add Total nodes explored
+        cout << "Execution Time : " << bfsTime.count() << endl;
+        cout << endl;
+
+        numHops = 0;
+        cost = 0;
+
+        cout << "Adjacency Matrix: " << endl;
+        for(int i = 0; i < bfsPathMat.size(); i++)
+        {
+            bfsPathMat[i].printPathMat();
+            cout << " , ";
+            numHops ++;
+            cost += bfsPathMat[i].getWeight();
+        }
+        cout << endl;
+        cout << "Number of Hops : " << numHops << endl;
+        cout << "Total Cost     : " << cost << endl;
+        // TODO : Add total distance
+        // TODO : Add Total nodes explored
+        cout << "Execution Time : " << bfsTimeMat.count() << endl;
+
+
 //        cout << "BFS Recursive:" << endl;
-//        for(int i = 0; i < time.size(); i++)
+//        for(int i = 0; i < bfsPathMat.size(); i++)
 //        {
+//
 //            cout << fileNames[i] << ": "<< time[i].count() << endl;
 //        }
-//    }
-//    else if(sortAlgo == 2)
-//    {
-//        cout << "DFS Iterative:" << endl;
-//        for(int i = 0; i < time.size(); i++)
+
+    }
+
+    else if(searchAlgo == 1)
+    {
+        int numHops = 0;
+        float cost = 0;
+        cout << "DFS Iterative:" << endl;
+        cout << "Adjacency List: " << endl;
+        for(int i = 0; i < dfsPath.size(); i++)
+        {
+            dfsPath[i].printPath();
+            cout <<" , ";
+            numHops ++;
+            cost += dfsPath[i].getWeight();
+        }
+        cout << endl;
+        cout << "Number of Hops : " << numHops << endl;
+        cout << "Total Cost     : " << cost << endl;
+        // TODO : Add total distance
+        // TODO : Add Total nodes explored
+        cout << "Execution Time : " << dfsTime.count() << endl;
+        cout << endl;
+
+        numHops = 0;
+        cost = 0;
+
+        cout << "Adjacency Matrix: " << endl;
+        for(int i = 0; i < dfsPathMat.size(); i++)
+        {
+            dfsPathMat[i].printPathMat();
+            cout << " , ";
+            numHops ++;
+            cost += dfsPathMat[i].getWeight();
+        }
+        cout << endl;
+        cout << "Number of Hops : " << numHops << endl;
+        cout << "Total Cost     : " << cost << endl;
+        // TODO : Add total distance
+        // TODO : Add Total nodes explored
+        cout << "Execution Time : " << dfsTimeMat.count() << endl;
+
+
+//        cout << "DFS Recursive:" << endl;
+//        for(int i = 0; i < bfsPathMat.size(); i++)
 //        {
+//
 //            cout << fileNames[i] << ": "<< time[i].count() << endl;
 //        }
-//    }
+
+    }
+
+
 }
 
 

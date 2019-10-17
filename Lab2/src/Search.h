@@ -29,9 +29,18 @@ private:
     AdjacencyList<Path> graph;
     vector<ListNode<int> > nodes;
     vector<vector<float> > adjMatrix;
-    vector<chrono::duration<double>> time;
-
     vector<string> fileNames;
+    bool loadedF = false;
+
+    vector<Path> bfsPath;
+    vector<Path> bfsPathMat;
+    vector<Path> dfsPath;
+    vector<Path> dfsPathMat;
+
+    chrono::duration<double> bfsTime;
+    chrono::duration<double> bfsTimeMat;
+    chrono::duration<double> dfsTime;
+    chrono::duration<double> dfsTimeMat;
 
 
 public:
