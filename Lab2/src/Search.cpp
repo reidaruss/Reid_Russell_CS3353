@@ -224,6 +224,7 @@ void Search::execute(int start, int end)
             load(file);
         }
         loadedF = true;
+        cout << "Finished loading files" << endl;
     }
 
 
@@ -387,6 +388,7 @@ void Search::stats()
 //        cout << "Total Distance : " << totalDist << endl;
         // TODO : Add Total nodes explored
         cout << "Execution Time : " << bfsTimeMat.count() << endl;
+        cout << endl;
 
 
 //        cout << "BFS Recursive:" << endl;
@@ -440,6 +442,7 @@ void Search::stats()
         cout << "Total Cost     : " << cost << endl;
         // TODO : Add Total nodes explored
         cout << "Execution Time : " << dfsTimeMat.count() << endl;
+        cout << endl;
 
 
 //        cout << "DFS Recursive:" << endl;
@@ -484,5 +487,157 @@ void Search::stats()
 
 void Search::log()
 {
+
+}
+
+void Search::reportTests() {
+    if(!testGen) {
+        int max = 16;
+        int min = 1;
+        int range = max - min + 1;
+
+        srand(time(0));
+        for (int i = 0; i < 200; i++) {
+            testCases.push_back(rand() % range + min);
+        }
+
+
+    testGen = true;
+
+    }
+
+
+    for( int i = 0; i < testCases.size(); i += 2) {
+        execute(testCases[i], testCases[i + 1]);
+
+        if (searchAlgo == 0) {
+            numPath.push_back(bfsPath.size());
+            numPathMat.push_back(bfsPathMat.size());
+            totTime.push_back(bfsTime);
+            totTimeMat.push_back(bfsTimeMat);
+            float total = 0;
+            for (int j = 0; j < bfsPath.size(); j++) {
+                total += bfsPath[j].getDistance();
+            }
+            totDist.push_back(total);
+
+
+        } else if (searchAlgo == 1) {
+            numPath.push_back(dfsPath.size());
+            numPathMat.push_back(dfsPathMat.size());
+            totTime.push_back(dfsTime);
+            totTimeMat.push_back(dfsTimeMat);
+            float total = 0;
+            for (int j = 0; j < dfsPath.size(); j++) {
+                total += dfsPath[j].getDistance();
+            }
+            totDist.push_back(total);
+
+
+        } else if (searchAlgo == 2) {
+            numPath.push_back(dkstra.size());
+            totTime.push_back(dkstraTime);
+            float total = 0;
+            for (int j = 0; j < bfsPath.size(); j++) {
+                total += dkstra[j].getDistance();
+            }
+            totDist.push_back(total);
+
+        }
+    }
+
+    if (searchAlgo == 0) {
+
+        float avg = 0;
+        for (int j = 0; j < numPath.size(); j++) {
+            avg += numPath[j];
+        }
+        avg = avg / numPath.size();
+        cout << "BFS, Iterative, AVG # nodes in path LL:  " << avg << endl;
+        avg = 0;
+        for (int j = 0; j < numPathMat.size(); j++) {
+            avg += numPathMat[j];
+        }
+        avg = avg / numPathMat.size();
+        cout << "BFS, Iterative, AVG # nodes in path Matrix:  " << avg << endl;
+        avg = 0;
+
+
+        for (int j = 0; j < totTime.size(); j++) {
+            avg += totTime[j].count();
+        }
+        avg = avg / totTime.size();
+        cout << "BFS, Iterative, AVG time LL:  " << avg << endl;
+        avg = 0;
+        for (int j = 0; j < totTimeMat.size(); j++) {
+            avg += totTimeMat[j].count();
+        }
+        avg = avg / totTimeMat.size();
+        cout << "BFS, Iterative, AVG time Matrix:  " << avg << endl;
+        avg = 0;
+
+        for (int j = 0; j < totDist.size(); j++) {
+            avg += totDist[j];
+        }
+        avg = avg / totDist.size();
+        cout << "BFS, Iterative, AVG Total distance LL:  " << avg << endl;
+        avg = 0;
+
+
+
+    } else if (searchAlgo == 1) {
+
+
+        float avg = 0;
+        for (int j = 0; j < numPath.size(); j++) {
+            avg += numPath[j];
+        }
+        avg = avg / numPath.size();
+        cout << "DFS, Iterative, AVG # nodes in path LL:  " << avg << endl;
+        avg = 0;
+        for (int j = 0; j < numPathMat.size(); j++) {
+            avg += numPathMat[j];
+        }
+        avg = avg / numPathMat.size();
+        cout << "DFS, Iterative, AVG # nodes in path Matrix:  " << avg << endl;
+        avg = 0;
+
+        for (int j = 0; j < totTime.size(); j++) {
+            avg += totTime[j].count();
+        }
+        avg = avg / totTime.size();
+        cout << "DFS, Iterative, AVG time LL:  " << avg << endl;
+        avg = 0;
+        for (int j = 0; j < totTimeMat.size(); j++) {
+            avg += totTimeMat[j].count();
+        }
+        avg = avg / totTimeMat.size();
+        cout << "DFS, Iterative, AVG time Matrix:  " << avg << endl;
+        avg = 0;
+        for (int j = 0; j < totDist.size(); j++) {
+            avg += totDist[j];
+        }
+        avg = avg / totDist.size();
+        cout << "DFS, Iterative, AVG Total distance LL:  " << avg << endl;
+        avg = 0;
+
+    } else if (searchAlgo == 2) {
+        float avg = 0;
+        for (int j = 0; j < numPath.size(); j++) {
+            avg += numPath[j];
+        }
+        avg = avg / numPath.size();
+        cout << "Dijkstra, Iterative, AVG # nodes in path LL:  " << avg << endl;
+        avg = 0;
+        for (int j = 0; j < totDist.size(); j++) {
+            avg += totDist[j];
+        }
+        avg = avg / totDist.size();
+        cout << "Dkstra, Iterative, AVG Total distance LL:  " << avg << endl;
+        avg = 0;
+
+
+    }
+
 
 }

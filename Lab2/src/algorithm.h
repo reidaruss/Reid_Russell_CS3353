@@ -13,6 +13,8 @@ public:
     virtual void stats() = 0;
     virtual void configure() = 0;
 
+    virtual void reportTests() =0;
+
     enum algos{BFSSEARCH=0,DFSSEARCH,DIJKSTRA,ASTAR,LAST};
 
 };

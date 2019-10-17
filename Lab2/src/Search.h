@@ -19,6 +19,9 @@
 #include <string>
 #include <chrono>
 #include <sstream>
+#include <random>
+#include<cstdlib>
+#include<ctime>
 
 
 using namespace std;
@@ -44,6 +47,15 @@ private:
     chrono::duration<double> dfsTimeMat;
     chrono::duration<double> dkstraTime;
 
+    bool testGen = false;
+    vector<int> testCases;
+    vector<int> numNodes;
+    vector<int> numPath;
+    vector<int> numPathMat;
+    vector<chrono::duration<double> > totTime;
+    vector<chrono::duration<double> > totTimeMat;
+    vector<float> totDist;
+
 
 
 
@@ -58,6 +70,7 @@ public:
     void configure();
     void stats();
     void log();
+    void reportTests();
 };
 
 

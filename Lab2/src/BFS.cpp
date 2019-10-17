@@ -19,6 +19,11 @@ BFS::BFS(int s, int d)
 vector<Path> BFS::BFSAdjList(AdjacencyList<Path>* list, int size)
 {
     depth = 1;
+    if(start == destination || start == 0 || destination == 0)
+    {
+        vector<Path> temp;
+        return temp;
+    }
 
     // Mark all the vertices as not visited
     bool *visited = new bool[size];
@@ -51,9 +56,7 @@ vector<Path> BFS::BFSAdjList(AdjacencyList<Path>* list, int size)
 
     }
 
-    // 'i' will be used to get all adjacent
-    // vertices of a vertex
-    //list<int>::iterator i;
+
 
     while(!myQueue.empty())
     {
@@ -65,9 +68,7 @@ vector<Path> BFS::BFSAdjList(AdjacencyList<Path>* list, int size)
         //cout << s << " ";
         myQueue.pop();
 
-        // Get all adjacent vertices of the dequeued
-        // vertex s. If a adjacent has not been visited,
-        // then mark it visited and enqueue it
+
         int index = list->findIndex(s.getDest());
         for(int i = 0; i< list->getInnerSize(index); i++)
         {
@@ -171,14 +172,14 @@ vector<Path> BFS::BFSMatrix( vector<vector<float> > *matrix, int size) {
     // Mark the current node as visited and enqueue it
     visitedMat[start - 1] = true;
     //Queue.push_back(start);
-    if (mat[start - 1][destination - 1] != 0) {
+    if (mat[start - 1][destination - 1] != zero) {
         Path p;
         p.setIntPath(start, destination);
         pathToGoalMat.push_back(p);
         return pathToGoalMat;
     }
     for (int i = 0; i < size; i++) {
-        if (mat[start - 1][i] != 0) {
+        if (mat[start - 1][i] != zero) {
             Path p;
             p.setIntPath(start, i + 1);
             myQueue.push(p);
@@ -216,7 +217,7 @@ vector<Path> BFS::BFSMatrix( vector<vector<float> > *matrix, int size) {
                 {
                     visitedMat[vIndex] = true;
                     for (int j = 0; j < size; j++) {
-                        if (mat[s.getDestInt()-1][j] != 0) {
+                        if (mat[s.getDestInt()-1][j] != zero) {
                             if (!visitedMat[j]) {
                                 Path p;
                                 p.setIntPath(s.getDestInt(), j + 1);
