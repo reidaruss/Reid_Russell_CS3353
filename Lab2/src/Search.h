@@ -76,29 +76,4 @@ public:
 
 #endif //LAB2_SEARCH_H
 
-// FOR THE REPORT
-// TODO :Randomly select source and destination nodes from selected graph
-// TODO :Perform search from srcàdest on both adjacency list and matrix for each of the coded
-//  algorithms, but keep results separate as they will compared against each other
-// TODO :Collect following stats:
-//  i. Number of nodes in path returned ii. Number of nodes explored
-//  iii. Total time of execution
-//  iv. Total Distance of path
-//  v. For A* only: execute using a heuristic that combines cost with distance
-//      1. F(n) = distance ( 1 + cost)
-// TODO : For each test normalize results so they can be compared
-// TODO : Perform test 100 times and record both raw and normalized values into output file, Each
-//  algorithm should be tested on the same randomly selected 100 src/dest points.
-// TODO : Average all execution stats for each graph set and place into a summary table
-// TODO : You should have a summary table for the following combinations for each graph set provided
-//      a. SourceàDestination, Adjacency Matrix
-//      b. SourceàDestination, Adjacency List
-// TODO : Create a plot for each of the performance metrics, where X axis is the graph set and Y axis is
-//  the metric value. Each plot should have each algorithm plotted. There should be a total of 4 plots
-//  (1 for each metric collected (i.e. Nodes in Path, Nodes Explored, Exe time, Distance))
-// TODO : Submit all tables and graphs in nicely formatted report in word. Which includes a writeup explaining
-//  results and differences between algorithms if any exist. Also provide the raw excel and data files used to create
-//  the charts and tables.
-
-// TODO : Submit inside of your class git repo, it folder Lab2/src/.
 

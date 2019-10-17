@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     {
 
         d->select(i);
-//        d->reportTests();
+ //       d->reportTests();
         d->execute(start, end);
         d->stats();
     }
