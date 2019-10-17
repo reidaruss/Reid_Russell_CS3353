@@ -19,6 +19,7 @@ private:
     int size;   //number of nodes
     //Path goalPath;
     int start, destination;
+    int depth;
     vector<Path> pathToGoal;
 
 public:
@@ -26,6 +27,8 @@ public:
     BFS(int s, int d);
 
     vector<Path> BFSAdjList(AdjacencyList<Path>* list, int size);
+
+    vector<Path>  getShortestPath();
 
 };
 

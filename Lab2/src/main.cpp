@@ -19,7 +19,7 @@ int main() {
     s.load("../SampleGraph/weights.txt");
     s.load("../SampleGraph/positions.txt");
     //s.display();
-    s.execute(1,10);
+    s.execute(1,15);
 
 //    Algorithm * d = new Search();
 //    for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)

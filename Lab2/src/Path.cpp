@@ -18,5 +18,5 @@ void Path::setPath(ListNode<int> *& source, ListNode<int> *& destination)
 
 void Path::printPath()
 {
-    cout << "Source: " << src->getPayload() << "Destination: " << dest->getPayload() << endl;
+    cout << "Source: " << src->getPayload() << " Destination: " << dest->getPayload() << endl;
 }
