@@ -70,6 +70,8 @@ void Search::load(string filePath)
 
             }
         }
+
+
         ListNode<int> * src = nullptr;  //Loop through nodes vector and assign pointers to children so that path can be built
         ListNode<int> * dest = nullptr;
         for(int i = 0; i < children.size(); i++)

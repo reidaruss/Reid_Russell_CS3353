@@ -100,7 +100,7 @@ vector<Path>  BFS::getShortestPath()
     //int j = 0;
     if(pathToGoal.size() == 2)  //If the pathToGoal is only 2 then that is the shortest path
         return pathToGoal;
-    while(i>= 1) {                  //Here we start at the back and loop from the beginning until the
+    while(i> 1) {                  //Here we start at the back and loop from the beginning until the
         for(int j = 0; j < i; j++)  //path.destination from the front (j) = path.src from the back (i)
         {                           //Then set i(back) = j(front) and keep going from j = 0 to i
          if(pathToGoal[i].getSrc() == pathToGoal[j].getDest()) {

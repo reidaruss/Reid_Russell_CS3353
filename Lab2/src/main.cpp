@@ -16,10 +16,10 @@ int main() {
 
     Search s;
     s.load("../SampleGraph/graph.txt");
-    s.load("../SampleGraph/weights.txt");
+    //s.load("../SampleGraph/weights.txt");
     s.load("../SampleGraph/positions.txt");
     //s.display();
-    s.execute(1,15);
+    s.execute(1,152);
 
 //    Algorithm * d = new Search();
 //    for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)

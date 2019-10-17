@@ -12,7 +12,7 @@ private:
     ListNode<int> * src;
     ListNode<int> * dest;
 
-    int weight;
+    float weight;
 
 public:
 
@@ -20,8 +20,8 @@ public:
     void setPath(ListNode<int> *& source, ListNode<int> *& destination);
     int getSrc(){ return src->getPayload();}
     int getDest(){ return dest->getPayload();}
-    int getWeight(){return weight;}
-    void setWeight(int w) { weight = w;}
+    float getWeight(){return weight;}
+    void setWeight(float w) { weight = w;}
 
     void printPath();
 
