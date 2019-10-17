@@ -5,18 +5,27 @@
 #ifndef LAB2_BFS_H
 #define LAB2_BFS_H
 
+#include "AdjacencyList.h"
+#include "Path.h"
 #include "LinkedList.h"
+
+#include <iostream>
+#include <queue>
+
+
 
 class BFS {
 private:
     int size;   //number of nodes
-
+    //Path goalPath;
+    int start, destination;
+    vector<Path> pathToGoal;
 
 public:
 
-    BFS();
+    BFS(int s, int d);
 
-    void breadthFS(int start, int end);
+    vector<Path> BFSAdjList(AdjacencyList<Path>* list, int size);
 
 };
 

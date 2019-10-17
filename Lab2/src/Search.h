@@ -9,6 +9,7 @@
 #include "LinkedList.h"
 #include "AdjacencyList.h"
 #include "Path.h"
+#include "BFS.h"
 
 
 #include <iostream>
@@ -34,7 +35,7 @@ public:
     Search();
 
     void load(string filePath);
-    void execute();
+    void execute(int start, int end);
     void display();
     void save();
     void select(int n);

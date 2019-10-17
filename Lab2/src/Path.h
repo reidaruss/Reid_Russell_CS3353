@@ -16,11 +16,14 @@ private:
 
 public:
 
-    Path(ListNode<int> *& source, ListNode<int> *& destination);
+    Path();
+    void setPath(ListNode<int> *& source, ListNode<int> *& destination);
     int getSrc(){ return src->getPayload();}
     int getDest(){ return dest->getPayload();}
     int getWeight(){return weight;}
     void setWeight(int w) { weight = w;}
+
+    void printPath();
 
 
 };

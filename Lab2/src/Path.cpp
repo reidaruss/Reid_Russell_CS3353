@@ -4,11 +4,19 @@
 
 #include "Path.h"
 
+Path::Path()
+{
 
+}
 
-Path::Path(ListNode<int> *& source, ListNode<int> *& destination)
+void Path::setPath(ListNode<int> *& source, ListNode<int> *& destination)
 {
     src = source;
     dest = destination;
     weight = 0;
+}
+
+void Path::printPath()
+{
+    cout << "Source: " << src->getPayload() << "Destination: " << dest->getPayload() << endl;
 }

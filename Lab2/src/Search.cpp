@@ -92,7 +92,8 @@ void Search::load(string filePath)
                         dest = &nodes[k];
                     }
                 }
-                Path p(src, dest);  //Create path and add to adjacency list in the correct index
+                Path p;
+                p.setPath(src, dest);  //Create path and add to adjacency list in the correct index
                 graph.add(i, p);
             }
         }
@@ -213,8 +214,15 @@ void Search::load(string filePath)
 }
 
 
-void Search::execute()
+void Search::execute(int start, int end)
 {
+    BFS bfs(start, end);
+    vector<Path> p= bfs.BFSAdjList(&graph, nodes.size());
+    for(int i = 0; i< p.size(); i++)
+    {
+        cout << "Hop: " << i << endl;
+        p[i].printPath();
+    }
 
 }
 void Search::display()

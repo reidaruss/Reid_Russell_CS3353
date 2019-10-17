@@ -6,6 +6,7 @@
 #define LAB2_ADJACENCYLIST_H
 
 #include "LinkedList.h"
+#include "Path.h"
 
 template<class T>
 class AdjacencyList
@@ -24,6 +25,7 @@ public:
     int getSize();
     void resetIters();
     int getInnerSize(int i);
+    int findIndex(int src);
     string getIter(string val); //get curr
 };
 
@@ -136,10 +138,16 @@ T AdjacencyList<T>::stepIterator(string val)
         }
     }
 
+}
 
-
-
-
+template <typename T>
+int AdjacencyList<T>::findIndex(int src)
+{
+    for(int i = 0; i < size; i++)
+    {
+        if(data[i][0].getSrc() == src)
+            return i;
+    }
 }
 
 template <typename T>
