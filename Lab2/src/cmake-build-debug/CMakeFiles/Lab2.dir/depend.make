@@ -16,8 +16,11 @@ CMakeFiles/Lab2.dir/DFS.cpp.o: ../DFS.h
 CMakeFiles/Lab2.dir/DFS.cpp.o: ../LinkedList.h
 CMakeFiles/Lab2.dir/DFS.cpp.o: ../Path.h
 
+CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../AdjacencyList.h
 CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../Dijkstra.cpp
 CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../Dijkstra.h
+CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../LinkedList.h
+CMakeFiles/Lab2.dir/Dijkstra.cpp.o: ../Path.h
 
 CMakeFiles/Lab2.dir/Path.cpp.o: ../LinkedList.h
 CMakeFiles/Lab2.dir/Path.cpp.o: ../Path.cpp

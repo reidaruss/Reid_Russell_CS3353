@@ -36,11 +36,15 @@ private:
     vector<Path> bfsPathMat;
     vector<Path> dfsPath;
     vector<Path> dfsPathMat;
+    vector<Path> dkstra;
 
     chrono::duration<double> bfsTime;
     chrono::duration<double> bfsTimeMat;
     chrono::duration<double> dfsTime;
     chrono::duration<double> dfsTimeMat;
+    chrono::duration<double> dkstraTime;
+
+
 
 
 public:
@@ -61,18 +65,6 @@ public:
 
 // FOR THE PROGRAM
 // TODO : command line arguments
-// TODO : BFS, DFS, Dijkstra, A*
-//          i. Iterative And Recursive
-//          ii. Adjacency List and Matrix
-// TODO : Algorithm::Stats should now output the following information in an easy to read format
-//          o Algorithm Name
-//          o Returned Path
-//          o Number of nodes in returned path o Total Cost of path
-//          o Total distance of path
-//          o Number of nodes explored in path o Execution time to find path
-// TODO : In main.cpp, loop through all algorithms and data sets to collect the performance timing.
-//  Your main.cpp should look similar to
-
 
 // FOR THE REPORT
 // TODO :Randomly select source and destination nodes from selected graph

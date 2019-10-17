@@ -6,6 +6,7 @@
 #define LAB2_PATH_H
 
 #include "LinkedList.h"
+#include <math.h>
 
 class Path {
 private:
@@ -16,6 +17,7 @@ private:
     int destInt;
 
     float weight;
+    float distance;
 
 public:
 
@@ -29,6 +31,9 @@ public:
     int getSrcInt() {return srcInt;};
     int getDestInt(){return destInt;}
     void setIntPath(int s, int d){srcInt = s; destInt = d;}
+
+    void setDistance();
+    float getDistance(){return distance;}
 
 
     void printPath();

@@ -36,8 +36,7 @@ void Search::load(string filePath)
                 {
                     nodes.push_back(node);
                 }
-                // TODO : Clean this up because now there is no reason to check everytime we get the connections only
-                //  when getting the first element (dont even need to check)
+
                 for (int i = 0; i < nodes.size(); i++) {    //make sure starting node not in nodes vector already
                     if (nodes[i].getPayload() == stoi(item))
                     {
@@ -272,8 +271,22 @@ void Search::execute(int start, int end)
                 dfsPM = dfs.DFSMatrix(mPointer, nodes.size());
                 t4 = chrono::high_resolution_clock::now();
                 dfsPathMat = dfsPM;
-                dfsTimeMat = chrono::duration_cast<chrono::duration<double>>(t2-t1);
+                dfsTimeMat = chrono::duration_cast<chrono::duration<double>>(t3-t4);
                 break;
+
+            case 2:
+                t1 = chrono::high_resolution_clock::now();
+                dkstra = dfs.DFSAdjList(&graph, nodes.size());
+                t2 = chrono::high_resolution_clock::now();
+                dkstraTime = chrono::duration_cast<chrono::duration<double>>(t2-t1);
+
+//                t3 = chrono::high_resolution_clock::now();
+//                dfsPM = dfs.DFSMatrix(mPointer, nodes.size());
+//                t4 = chrono::high_resolution_clock::now();
+//                dfsPathMat = dfsPM;
+//                dfsTimeMat = chrono::duration_cast<chrono::duration<double>>(t2-t1);
+                break;
+
 
         }
 
@@ -332,6 +345,7 @@ void Search::stats()
 {
     if(searchAlgo == 0)
     {
+        float totalDist = 0;
         int numHops = 0;
         float cost = 0;
         cout << "BFS Iterative:" << endl;
@@ -342,17 +356,20 @@ void Search::stats()
             cout <<" , ";
             numHops ++;
             cost += bfsPath[i].getWeight();
+            bfsPath[i].setDistance();
+            totalDist += bfsPath[i].getDistance();
         }
         cout << endl;
         cout << "Number of Hops : " << numHops << endl;
         cout << "Total Cost     : " << cost << endl;
-        // TODO : Add total distance
+        cout << "Total Distance : " << totalDist << endl;
         // TODO : Add Total nodes explored
         cout << "Execution Time : " << bfsTime.count() << endl;
         cout << endl;
 
         numHops = 0;
         cost = 0;
+        totalDist = 0;
 
         cout << "Adjacency Matrix: " << endl;
         for(int i = 0; i < bfsPathMat.size(); i++)
@@ -361,11 +378,13 @@ void Search::stats()
             cout << " , ";
             numHops ++;
             cost += bfsPathMat[i].getWeight();
+//            bfsPathMat[i].setDistance();
+//            totalDist += bfsPathMat[i].getDistance();
         }
         cout << endl;
         cout << "Number of Hops : " << numHops << endl;
         cout << "Total Cost     : " << cost << endl;
-        // TODO : Add total distance
+//        cout << "Total Distance : " << totalDist << endl;
         // TODO : Add Total nodes explored
         cout << "Execution Time : " << bfsTimeMat.count() << endl;
 
@@ -377,10 +396,13 @@ void Search::stats()
 //            cout << fileNames[i] << ": "<< time[i].count() << endl;
 //        }
 
+
+
     }
 
     else if(searchAlgo == 1)
     {
+        float totalDist = 0;
         int numHops = 0;
         float cost = 0;
         cout << "DFS Iterative:" << endl;
@@ -391,11 +413,13 @@ void Search::stats()
             cout <<" , ";
             numHops ++;
             cost += dfsPath[i].getWeight();
+            dfsPath[i].setDistance();
+            totalDist += dfsPath[i].getDistance();
         }
         cout << endl;
         cout << "Number of Hops : " << numHops << endl;
         cout << "Total Cost     : " << cost << endl;
-        // TODO : Add total distance
+        cout << "Total Distance : " << totalDist << endl;
         // TODO : Add Total nodes explored
         cout << "Execution Time : " << dfsTime.count() << endl;
         cout << endl;
@@ -414,7 +438,6 @@ void Search::stats()
         cout << endl;
         cout << "Number of Hops : " << numHops << endl;
         cout << "Total Cost     : " << cost << endl;
-        // TODO : Add total distance
         // TODO : Add Total nodes explored
         cout << "Execution Time : " << dfsTimeMat.count() << endl;
 
@@ -425,6 +448,33 @@ void Search::stats()
 //
 //            cout << fileNames[i] << ": "<< time[i].count() << endl;
 //        }
+
+    }
+
+    else if(searchAlgo == 2)
+    {
+        float totalDist = 0;
+        int numHops = 0;
+        float cost = 0;
+        cout << "Dijkstra :" << endl;
+        cout << "Adjacency List: " << endl;
+        for(int i = 0; i < dkstra.size(); i++)
+        {
+            dkstra[i].printPath();
+            cout <<" , ";
+            numHops ++;
+            cost += dkstra[i].getWeight();
+            dkstra[i].setDistance();
+            totalDist += dkstra[i].getDistance();
+        }
+        cout << endl;
+        cout << "Number of Hops : " << numHops << endl;
+        cout << "Total Cost     : " << cost << endl;
+        cout << "Total Distance : " << totalDist << endl;
+        // TODO : Add Total nodes explored
+        cout << "Execution Time : " << dkstraTime.count() << endl;
+        cout << endl;
+
 
     }
 
