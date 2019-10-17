@@ -8,15 +8,9 @@
 
 
 
-int main() {
-    int start = 1;
-    int end = 16;
-
-//    Search s;
-//    s.select(0);
-//    s.execute(1,16);
-//    s.select(1);
-//    s.execute(1,16);
+int main(int argc, char* argv[]) {
+    int start = stoi(argv[1]);
+    int end = stoi(argv[2]);
 
     Algorithm * d = new Search();
     for(int i = Algorithm::BFSSEARCH; i != Algorithm::LAST;i++)

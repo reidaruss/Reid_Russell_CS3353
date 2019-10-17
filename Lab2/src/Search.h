@@ -63,9 +63,6 @@ public:
 
 #endif //LAB2_SEARCH_H
 
-// FOR THE PROGRAM
-// TODO : command line arguments
-
 // FOR THE REPORT
 // TODO :Randomly select source and destination nodes from selected graph
 // TODO :Perform search from srcàdest on both adjacency list and matrix for each of the coded
