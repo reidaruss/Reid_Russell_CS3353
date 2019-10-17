@@ -28,6 +28,22 @@ vector
 string
 -
 
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/DFS.h
+AdjacencyList.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/AdjacencyList.h
+Path.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Path.h
+LinkedList.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.h
+iostream
+-
+stack
+-
+vector
+-
+string
+-
+
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.h
 iostream
 -
@@ -40,6 +56,10 @@ vector
 LinkedList.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.h
 
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Search.cpp
+Search.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Search.h
+
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Search.h
 algorithm.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/algorithm.h
@@ -51,6 +71,8 @@ Path.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Path.h
 BFS.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/BFS.h
+DFS.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/DFS.h
 iostream
 -
 fstream
@@ -67,16 +89,4 @@ sstream
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/algorithm.h
 string
 -
-
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/main.cpp
-iostream
--
-Search.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/Search.h
-algorithm.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/algorithm.h
-LinkedList.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/LinkedList.h
-AdjacencyList.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/AdjacencyList.h
 

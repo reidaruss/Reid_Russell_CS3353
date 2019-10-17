@@ -10,6 +10,7 @@
 #include "AdjacencyList.h"
 #include "Path.h"
 #include "BFS.h"
+#include "DFS.h"
 
 
 #include <iostream>

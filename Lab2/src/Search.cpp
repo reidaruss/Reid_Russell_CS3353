@@ -226,10 +226,15 @@ void Search::execute(int start, int end)
     //time.clear();
     // TODO : DO THIS LATER
 
+    vector<vector<float> >* mPointer = &adjMatrix;
+
     BFS bfs(start, end);
+    DFS dfs(start, end);
 
     vector<Path> p;
     vector<Path> pM;
+    vector<Path> dfsP;
+    vector<Path> dfsPM;
 
         switch (searchAlgo) {
 
@@ -239,10 +244,19 @@ void Search::execute(int start, int end)
                 //time.push_back(.execute(data));
                 p= bfs.BFSAdjList(&graph, nodes.size());
                 //log();
-                vector<vector<float> >* mPointer = &adjMatrix;
+
                 pM = bfs.BFSMatrix(mPointer, nodes.size());
                 break;
+
+            case 1:
+
+                dfsP = dfs.DFSAdjList(&graph, nodes.size());
+                dfsPM = dfs.DFSMatrix(mPointer, nodes.size());
+                break;
+
+
         }
+        cout << "BFS : " << endl;
         cout << "AdjacencyList:" << endl;
     for(int i = 0; i< p.size(); i++)
     {
@@ -255,6 +269,19 @@ void Search::execute(int start, int end)
     {
         cout << "Hop: " << i << endl;
         pM[i].printPathMat();
+    }
+    cout << "DFS : " << endl;
+    cout << "AdjacencyList:" << endl;
+    for(int i = 0; i< dfsP.size(); i++)
+    {
+        cout << "Hop: " << i << endl;
+        dfsP[i].printPath();
+    }
+    cout << "Matrix:" << endl;
+    for(int i = 0; i< dfsPM.size(); i++)
+    {
+        cout << "Hop: " << i << endl;
+        dfsPM[i].printPathMat();
     }
 
 

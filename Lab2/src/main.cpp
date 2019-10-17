@@ -19,6 +19,8 @@ int main() {
     Search s;
     s.select(0);
     s.execute(1,16);
+    s.select(1);
+    s.execute(1,16);
 
 //    Algorithm * d = new Search();
 //    for(int i = Algorithm::BUBBLE; i != Algorithm::LAST;i++)
