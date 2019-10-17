@@ -150,33 +150,6 @@ AStar.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/AStar.cpp.s
 .PHONY : AStar.cpp.s
 
-AdjacencyMatrix.o: AdjacencyMatrix.cpp.o
-
-.PHONY : AdjacencyMatrix.o
-
-# target to build an object file
-AdjacencyMatrix.cpp.o:
-	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.o
-.PHONY : AdjacencyMatrix.cpp.o
-
-AdjacencyMatrix.i: AdjacencyMatrix.cpp.i
-
-.PHONY : AdjacencyMatrix.i
-
-# target to preprocess a source file
-AdjacencyMatrix.cpp.i:
-	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.i
-.PHONY : AdjacencyMatrix.cpp.i
-
-AdjacencyMatrix.s: AdjacencyMatrix.cpp.s
-
-.PHONY : AdjacencyMatrix.s
-
-# target to generate assembly for a file
-AdjacencyMatrix.cpp.s:
-	$(MAKE) -f CMakeFiles/Lab2.dir/build.make CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.s
-.PHONY : AdjacencyMatrix.cpp.s
-
 BFS.o: BFS.cpp.o
 
 .PHONY : BFS.o
@@ -351,9 +324,6 @@ help:
 	@echo "... AStar.o"
 	@echo "... AStar.i"
 	@echo "... AStar.s"
-	@echo "... AdjacencyMatrix.o"
-	@echo "... AdjacencyMatrix.i"
-	@echo "... AdjacencyMatrix.s"
 	@echo "... BFS.o"
 	@echo "... BFS.i"
 	@echo "... BFS.s"

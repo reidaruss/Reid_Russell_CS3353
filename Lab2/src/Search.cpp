@@ -106,7 +106,7 @@ void Search::load(string filePath)
         //Create the nxn matrix- creating it here because now program has number of nodes
         for(int i = 0; i < nodes.size(); i++)
         {
-            vector<int> temp(nodes.size());
+            vector<float> temp(nodes.size());
             adjMatrix.push_back(temp);
         }
 
@@ -126,7 +126,6 @@ void Search::load(string filePath)
 // :::::::::::::::::::Read in weights and populate graphs
     if(filePath == "../SampleGraph/weights.txt")
     {
-        // TODO : Read in the weights into subpath objects
         ifstream file;
         file.open("../SampleGraph/weights.txt");
         string line;
@@ -142,24 +141,21 @@ void Search::load(string filePath)
                 getline(iss, item, ',');
                 int destination = stoi(item);
                 getline(iss, item, ',');
-                int weight = stoi(item);
+                float weight = stoi(item);
 
 
 
 
                 //Assign weight for matrix (do -1 for indexing purposes)
                 adjMatrix[source-1][destination-1] = weight;
-
-                //Find each path associated with a weight and assign.
-                for(int i = 0; i < graph.getSize(); i++)
+                
+                int index = graph.findIndex(source);
+                for(int i = 0; i < graph.getInnerSize(index);  i++)
                 {
-                    for(int j = 0; j < graph.getInnerSize(i); j++)
+                    if(graph.getAt(index,i)->getSrc() == source && graph.getAt(index,i)->getDest() == destination)
                     {
-                        if(graph.getAt(i,j)->getSrc() == source && graph.getAt(i,j)->getDest() == destination)
-                        {
-                            graph.getAt(i,j)->setWeight(weight);
-                            break;
-                        }
+                        graph.getAt(index,i)->setWeight(weight);
+                        break;
                     }
                 }
             }

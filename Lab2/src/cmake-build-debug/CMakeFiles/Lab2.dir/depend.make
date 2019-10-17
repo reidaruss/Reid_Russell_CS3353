@@ -4,10 +4,6 @@
 CMakeFiles/Lab2.dir/AStar.cpp.o: ../AStar.cpp
 CMakeFiles/Lab2.dir/AStar.cpp.o: ../AStar.h
 
-CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.o: ../AdjacencyMatrix.cpp
-CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.o: ../AdjacencyMatrix.h
-CMakeFiles/Lab2.dir/AdjacencyMatrix.cpp.o: ../LinkedList.h
-
 CMakeFiles/Lab2.dir/BFS.cpp.o: ../AdjacencyList.h
 CMakeFiles/Lab2.dir/BFS.cpp.o: ../BFS.cpp
 CMakeFiles/Lab2.dir/BFS.cpp.o: ../BFS.h

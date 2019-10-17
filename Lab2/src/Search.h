@@ -28,7 +28,7 @@ private:
     AdjacencyList<Path> graph;
     vector<ListNode<int> > nodes;
 
-    vector<vector<int> > adjMatrix;
+    vector<vector<float> > adjMatrix;
 
 
 public:

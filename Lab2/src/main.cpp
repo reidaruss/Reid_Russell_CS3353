@@ -16,7 +16,7 @@ int main() {
 
     Search s;
     s.load("../SampleGraph/graph.txt");
-    //s.load("../SampleGraph/weights.txt");
+    s.load("../SampleGraph/weights.txt");
     s.load("../SampleGraph/positions.txt");
     //s.display();
     s.execute(1,152);

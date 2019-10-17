@@ -89,12 +89,6 @@
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/AdjacencyList.h">
 			<Option target="Lab2"/>
 		</Unit>
-		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/AdjacencyMatrix.cpp">
-			<Option target="Lab2"/>
-		</Unit>
-		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/AdjacencyMatrix.h">
-			<Option target="Lab2"/>
-		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab2/src/BFS.cpp">
 			<Option target="Lab2"/>
 		</Unit>
