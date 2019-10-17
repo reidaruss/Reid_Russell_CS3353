@@ -6,6 +6,9 @@
 
 Search::Search()
 {
+    fileNames.push_back("../SampleGraph/graph.txt");
+    fileNames.push_back("../SampleGraph/weights.txt");
+    fileNames.push_back("../SampleGraph/positions.txt");
 
 }
 
@@ -19,7 +22,7 @@ void Search::load(string filePath)
         vector<vector<int> > children; // used for assigning pointers to paths after nodes are read in
         int counter = 0;
         ifstream file;
-        file.open("../SampleGraph/graph.txt");
+        file.open(filePath);
         string line;
         string item;
         if (file.is_open()) {
@@ -34,7 +37,8 @@ void Search::load(string filePath)
                 {
                     nodes.push_back(node);
                 }
-                // TODO : Clean this up because now there is no reason to check everytime we get the connections only when getting the first element (dont even need to check)
+                // TODO : Clean this up because now there is no reason to check everytime we get the connections only
+                //  when getting the first element (dont even need to check)
                 for (int i = 0; i < nodes.size(); i++) {    //make sure starting node not in nodes vector already
                     if (nodes[i].getPayload() == stoi(item))
                     {
@@ -127,7 +131,7 @@ void Search::load(string filePath)
     if(filePath == "../SampleGraph/weights.txt")
     {
         ifstream file;
-        file.open("../SampleGraph/weights.txt");
+        file.open(filePath);
         string line;
         string item;
         if (file.is_open())
@@ -148,7 +152,7 @@ void Search::load(string filePath)
 
                 //Assign weight for matrix (do -1 for indexing purposes)
                 adjMatrix[source-1][destination-1] = weight;
-                
+
                 int index = graph.findIndex(source);
                 for(int i = 0; i < graph.getInnerSize(index);  i++)
                 {
@@ -171,7 +175,7 @@ void Search::load(string filePath)
     if(filePath == "../SampleGraph/positions.txt")
     {
         ifstream file;
-        file.open("../SampleGraph/positions.txt");
+        file.open(filePath);
         string line;
         string item;
         if (file.is_open())
@@ -214,13 +218,81 @@ void Search::load(string filePath)
 
 void Search::execute(int start, int end)
 {
+    string file = "";
+    for(int i = 0; i < fileNames.size();i++) {
+        file = fileNames[i];
+        load(file);
+    }
+    //time.clear();
+    // TODO : DO THIS LATER
+
     BFS bfs(start, end);
-    vector<Path> p= bfs.BFSAdjList(&graph, nodes.size());
+
+    vector<Path> p;
+    vector<Path> pM;
+
+        switch (searchAlgo) {
+
+            case 0:
+                //cout << "Bubble" << endl;
+
+                //time.push_back(.execute(data));
+                p= bfs.BFSAdjList(&graph, nodes.size());
+                //log();
+                vector<vector<float> >* mPointer = &adjMatrix;
+                pM = bfs.BFSMatrix(mPointer, nodes.size());
+                break;
+        }
+        cout << "AdjacencyList:" << endl;
     for(int i = 0; i< p.size(); i++)
     {
         cout << "Hop: " << i << endl;
         p[i].printPath();
     }
+    cout << endl;
+    cout << "Matrix" << endl;
+    for(int i = 0; i< pM.size(); i++)
+    {
+        cout << "Hop: " << i << endl;
+        pM[i].printPathMat();
+    }
+
+
+
+
+//    //cout << "executing" << endl;
+//    Bubble b;
+//    Insertion ins;
+//    Merge m;
+//    string file = "";
+//    for(int i = 0; i < fileNames.size();i++)
+//    {
+//        file = fileNames[i];
+//        switch (sortAlgo) {
+//
+//            case 0:
+//                //cout << "Bubble" << endl;
+//                load(file);
+//                time.push_back(b.execute(data));
+//                log();
+//                break;
+//            case 1:
+//                //cout << "insertion"<<endl;
+//                load(file);
+//                time.push_back(ins.execute(data));
+//                log();
+//                break;
+//            case 2:
+//                //cout << "merge"<<endl;
+//                load(file);
+//                time.push_back(m.execute(data));
+//                log();
+//                break;
+//            case 3:
+//                break;
+//            default:;
+//        }
+//    }
 
 }
 void Search::display()
@@ -261,7 +333,7 @@ void Search::save()
 
 void Search::select(int n)
 {
-
+    searchAlgo = n;
 }
 
 
@@ -273,7 +345,30 @@ void Search::configure()
 
 void Search::stats()
 {
-
+    if(searchAlgo == 0)
+    {
+        cout << "BFS Iterative:" << endl;
+        for(int i = 0; i < time.size(); i++)
+        {
+            cout << fileNames[i] << ": "<< time[i].count() << endl;
+        }
+    }
+//    else if(sortAlgo == 1)
+//    {
+//        cout << "BFS Recursive:" << endl;
+//        for(int i = 0; i < time.size(); i++)
+//        {
+//            cout << fileNames[i] << ": "<< time[i].count() << endl;
+//        }
+//    }
+//    else if(sortAlgo == 2)
+//    {
+//        cout << "DFS Iterative:" << endl;
+//        for(int i = 0; i < time.size(); i++)
+//        {
+//            cout << fileNames[i] << ": "<< time[i].count() << endl;
+//        }
+//    }
 }
 
 

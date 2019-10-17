@@ -12,6 +12,9 @@ private:
     ListNode<int> * src;
     ListNode<int> * dest;
 
+    int srcInt;
+    int destInt;
+
     float weight;
 
 public:
@@ -23,7 +26,13 @@ public:
     float getWeight(){return weight;}
     void setWeight(float w) { weight = w;}
 
+    int getSrcInt() {return srcInt;};
+    int getDestInt(){return destInt;}
+    void setIntPath(int s, int d){srcInt = s; destInt = d;}
+
+
     void printPath();
+    void printPathMat();
 
 
 };

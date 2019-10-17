@@ -20,3 +20,8 @@ void Path::printPath()
 {
     cout << "Source: " << src->getPayload() << " Destination: " << dest->getPayload() << endl;
 }
+
+void Path::printPathMat()
+{
+    cout << "Source: " << srcInt << " Destination: " << destInt << endl;
+}
