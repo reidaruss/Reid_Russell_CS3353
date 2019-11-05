@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
+iostream
+-
+vector
+-
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.h
+iostream
+-
+fstream
+-
+string
+-
+sstream
+-
+vector
+-
+Node.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/main.cpp
+iostream
+-
+fileIn.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.h
+
