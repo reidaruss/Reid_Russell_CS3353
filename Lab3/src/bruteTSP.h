@@ -9,6 +9,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <chrono>
 
 #include "Node.h"
 
@@ -17,6 +18,7 @@ class bruteTSP {
 private:
     std::vector<Node*> nodes;
     std::vector<Node> shortestPath;
+    std::chrono::duration<double> runtime;
 
 public:
     bruteTSP(std::vector<Node*> nList);
@@ -25,6 +27,7 @@ public:
 
     float calcDist();
     void run();
+    float getRunTime() {return runtime.count();}
 
 
 };

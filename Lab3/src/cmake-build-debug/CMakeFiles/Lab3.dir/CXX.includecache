@@ -6,15 +6,39 @@
 
 #IncludeRegexTransform: 
 
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Algorithm.h
+iostream
+-
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.h
+iostream
+-
+vector
+-
+algorithm
+-
+Node.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
+
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
 iostream
 -
 vector
 -
 
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.cpp
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.h
+iostream
+-
+Algorithm.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Algorithm.h
+fileIn.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.h
 bruteTSP.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.h
+DPTSP.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.h
+Node.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
 
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.h
 iostream
@@ -25,6 +49,28 @@ algorithm
 -
 cmath
 -
+chrono
+-
 Node.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.h
+iostream
+-
+fstream
+-
+string
+-
+sstream
+-
+vector
+-
+Node.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/main.cpp
+Algorithm.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Algorithm.h
+TSP.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.h
 

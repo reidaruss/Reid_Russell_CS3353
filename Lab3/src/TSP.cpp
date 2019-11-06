@@ -33,6 +33,7 @@ void TSP::execute()
     {
         bruteTSP * bTSP = new bruteTSP(file.getNodePs());
         bTSP->run();
+        std::cout << "Runtime of Brute Force: " << bTSP->getRunTime() << std::endl;
         delete bTSP;
     }
     // Dynamic Programming TSP
