@@ -80,10 +80,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Algorithm.h">
+			<Option target="Lab3"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.cpp">
+			<Option target="Lab3"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.h">
+			<Option target="Lab3"/>
+		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.cpp">
 			<Option target="Lab3"/>
 		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h">
+			<Option target="Lab3"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.cpp">
+			<Option target="Lab3"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.h">
+			<Option target="Lab3"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.cpp">
+			<Option target="Lab3"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.h">
 			<Option target="Lab3"/>
 		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.cpp">

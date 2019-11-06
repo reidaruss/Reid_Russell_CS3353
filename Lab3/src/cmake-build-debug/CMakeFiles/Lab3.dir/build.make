@@ -96,11 +96,53 @@ CMakeFiles/Lab3.dir/fileIn.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab3.dir/fileIn.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.cpp -o CMakeFiles/Lab3.dir/fileIn.cpp.s
 
+CMakeFiles/Lab3.dir/bruteTSP.cpp.o: CMakeFiles/Lab3.dir/flags.make
+CMakeFiles/Lab3.dir/bruteTSP.cpp.o: ../bruteTSP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lab3.dir/bruteTSP.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab3.dir/bruteTSP.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.cpp
+
+CMakeFiles/Lab3.dir/bruteTSP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab3.dir/bruteTSP.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.cpp > CMakeFiles/Lab3.dir/bruteTSP.cpp.i
+
+CMakeFiles/Lab3.dir/bruteTSP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab3.dir/bruteTSP.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.cpp -o CMakeFiles/Lab3.dir/bruteTSP.cpp.s
+
+CMakeFiles/Lab3.dir/TSP.cpp.o: CMakeFiles/Lab3.dir/flags.make
+CMakeFiles/Lab3.dir/TSP.cpp.o: ../TSP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab3.dir/TSP.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab3.dir/TSP.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.cpp
+
+CMakeFiles/Lab3.dir/TSP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab3.dir/TSP.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.cpp > CMakeFiles/Lab3.dir/TSP.cpp.i
+
+CMakeFiles/Lab3.dir/TSP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab3.dir/TSP.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/TSP.cpp -o CMakeFiles/Lab3.dir/TSP.cpp.s
+
+CMakeFiles/Lab3.dir/DPTSP.cpp.o: CMakeFiles/Lab3.dir/flags.make
+CMakeFiles/Lab3.dir/DPTSP.cpp.o: ../DPTSP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lab3.dir/DPTSP.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab3.dir/DPTSP.cpp.o -c /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.cpp
+
+CMakeFiles/Lab3.dir/DPTSP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab3.dir/DPTSP.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.cpp > CMakeFiles/Lab3.dir/DPTSP.cpp.i
+
+CMakeFiles/Lab3.dir/DPTSP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab3.dir/DPTSP.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/DPTSP.cpp -o CMakeFiles/Lab3.dir/DPTSP.cpp.s
+
 # Object files for target Lab3
 Lab3_OBJECTS = \
 "CMakeFiles/Lab3.dir/main.cpp.o" \
 "CMakeFiles/Lab3.dir/Node.cpp.o" \
-"CMakeFiles/Lab3.dir/fileIn.cpp.o"
+"CMakeFiles/Lab3.dir/fileIn.cpp.o" \
+"CMakeFiles/Lab3.dir/bruteTSP.cpp.o" \
+"CMakeFiles/Lab3.dir/TSP.cpp.o" \
+"CMakeFiles/Lab3.dir/DPTSP.cpp.o"
 
 # External object files for target Lab3
 Lab3_EXTERNAL_OBJECTS =
@@ -108,9 +150,12 @@ Lab3_EXTERNAL_OBJECTS =
 Lab3: CMakeFiles/Lab3.dir/main.cpp.o
 Lab3: CMakeFiles/Lab3.dir/Node.cpp.o
 Lab3: CMakeFiles/Lab3.dir/fileIn.cpp.o
+Lab3: CMakeFiles/Lab3.dir/bruteTSP.cpp.o
+Lab3: CMakeFiles/Lab3.dir/TSP.cpp.o
+Lab3: CMakeFiles/Lab3.dir/DPTSP.cpp.o
 Lab3: CMakeFiles/Lab3.dir/build.make
 Lab3: CMakeFiles/Lab3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Lab3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Lab3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

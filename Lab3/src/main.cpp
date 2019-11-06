@@ -1,24 +1,23 @@
 #include <iostream>
 #include "fileIn.h"
+#include "TSP.h"
+#include "Algorithm.h"
+
 int main() {
 
-//    Node n(1);
-//    std::vector<float> v;
-//    v.push_back(1.23);
-//    v.push_back(3.45);
-//    v.push_back(4.112);
-//    n.setPos(v);
-
-
-//    for(int i = 0; i < n.getPos().size(); i++)
-//    {
-//        std::cout << n.getPosAt(i) << std::endl;
-//    }
 
     fileIn f("../pos.txt");
     f.readFile();
-    f.printNodes();
 
+    Algorithm * d = new TSP();
+    for(int i = Algorithm::BRUTETSP; i != Algorithm::LAST;i++)
+    {
+        d->select(i);
+        d->execute(start, end);
+        d->printSolution();
+    }
+
+    delete d;
 
 
     return 0;

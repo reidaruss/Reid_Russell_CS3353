@@ -123,6 +123,33 @@ Lab3/fast:
 	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/build
 .PHONY : Lab3/fast
 
+DPTSP.o: DPTSP.cpp.o
+
+.PHONY : DPTSP.o
+
+# target to build an object file
+DPTSP.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/DPTSP.cpp.o
+.PHONY : DPTSP.cpp.o
+
+DPTSP.i: DPTSP.cpp.i
+
+.PHONY : DPTSP.i
+
+# target to preprocess a source file
+DPTSP.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/DPTSP.cpp.i
+.PHONY : DPTSP.cpp.i
+
+DPTSP.s: DPTSP.cpp.s
+
+.PHONY : DPTSP.s
+
+# target to generate assembly for a file
+DPTSP.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/DPTSP.cpp.s
+.PHONY : DPTSP.cpp.s
+
 Node.o: Node.cpp.o
 
 .PHONY : Node.o
@@ -149,6 +176,60 @@ Node.s: Node.cpp.s
 Node.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/Node.cpp.s
 .PHONY : Node.cpp.s
+
+TSP.o: TSP.cpp.o
+
+.PHONY : TSP.o
+
+# target to build an object file
+TSP.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/TSP.cpp.o
+.PHONY : TSP.cpp.o
+
+TSP.i: TSP.cpp.i
+
+.PHONY : TSP.i
+
+# target to preprocess a source file
+TSP.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/TSP.cpp.i
+.PHONY : TSP.cpp.i
+
+TSP.s: TSP.cpp.s
+
+.PHONY : TSP.s
+
+# target to generate assembly for a file
+TSP.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/TSP.cpp.s
+.PHONY : TSP.cpp.s
+
+bruteTSP.o: bruteTSP.cpp.o
+
+.PHONY : bruteTSP.o
+
+# target to build an object file
+bruteTSP.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/bruteTSP.cpp.o
+.PHONY : bruteTSP.cpp.o
+
+bruteTSP.i: bruteTSP.cpp.i
+
+.PHONY : bruteTSP.i
+
+# target to preprocess a source file
+bruteTSP.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/bruteTSP.cpp.i
+.PHONY : bruteTSP.cpp.i
+
+bruteTSP.s: bruteTSP.cpp.s
+
+.PHONY : bruteTSP.s
+
+# target to generate assembly for a file
+bruteTSP.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab3.dir/build.make CMakeFiles/Lab3.dir/bruteTSP.cpp.s
+.PHONY : bruteTSP.cpp.s
 
 fileIn.o: fileIn.cpp.o
 
@@ -213,9 +294,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lab3"
+	@echo "... DPTSP.o"
+	@echo "... DPTSP.i"
+	@echo "... DPTSP.s"
 	@echo "... Node.o"
 	@echo "... Node.i"
 	@echo "... Node.s"
+	@echo "... TSP.o"
+	@echo "... TSP.i"
+	@echo "... TSP.s"
+	@echo "... bruteTSP.o"
+	@echo "... bruteTSP.i"
+	@echo "... bruteTSP.s"
 	@echo "... fileIn.o"
 	@echo "... fileIn.i"
 	@echo "... fileIn.s"

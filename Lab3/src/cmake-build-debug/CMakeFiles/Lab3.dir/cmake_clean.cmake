@@ -2,6 +2,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lab3.dir/main.cpp.o"
   "CMakeFiles/Lab3.dir/Node.cpp.o"
   "CMakeFiles/Lab3.dir/fileIn.cpp.o"
+  "CMakeFiles/Lab3.dir/bruteTSP.cpp.o"
+  "CMakeFiles/Lab3.dir/TSP.cpp.o"
+  "CMakeFiles/Lab3.dir/DPTSP.cpp.o"
   "Lab3.pdb"
   "Lab3"
 )
