@@ -12,23 +12,19 @@ iostream
 vector
 -
 
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.cpp
+bruteTSP.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/bruteTSP.h
 iostream
--
-fstream
--
-string
--
-sstream
 -
 vector
 -
+algorithm
+-
+cmath
+-
 Node.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/Node.h
-
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/main.cpp
-iostream
--
-fileIn.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab3/src/fileIn.h
 

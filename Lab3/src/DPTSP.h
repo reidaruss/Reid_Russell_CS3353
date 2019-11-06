@@ -5,8 +5,23 @@
 #ifndef LAB3_DPTSP_H
 #define LAB3_DPTSP_H
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
-class DPTSP {
+
+#include "Node.h"
+
+
+class dynamicProgTSP {
+
+private:
+    std::vector<Node> nodes;
+
+public:
+    dynamicProgTSP(std::vector<Node>* nList);
+
+    void run();
 
 };
 

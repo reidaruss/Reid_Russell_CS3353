@@ -19,7 +19,7 @@ public:
     Node(int id);
     void setPos(std::vector<float> pos);
 
-    int getId(){return nodeId;}
+    int getId() {return nodeId;}
     std::vector<float> getPos() {return position;}
     float getPosAt(int i) {return position[i];}
 

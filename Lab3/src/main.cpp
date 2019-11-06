@@ -1,19 +1,15 @@
-#include <iostream>
-#include "fileIn.h"
-#include "TSP.h"
+
 #include "Algorithm.h"
+#include "TSP.h"
 
 int main() {
 
-
-    fileIn f("../pos.txt");
-    f.readFile();
-
     Algorithm * d = new TSP();
+    d->load("../pos.txt");
     for(int i = Algorithm::BRUTETSP; i != Algorithm::LAST;i++)
     {
         d->select(i);
-        d->execute(start, end);
+        d->execute();
         d->printSolution();
     }
 

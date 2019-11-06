@@ -39,6 +39,8 @@ void fileIn::readFile()
     }
     file.close();
 
+    setNodePs();
+
 }
 
 void fileIn::printNodes()
@@ -46,5 +48,14 @@ void fileIn::printNodes()
     for(int i = 0; i < nodes.size(); i++)
     {
         nodes[i].print();
+    }
+}
+
+// Creates a vector of Node pointers to be used with next_permutation in brute force TSP
+void fileIn::setNodePs()
+{
+    for(int i = 0; i < nodes.size(); i++)
+    {
+        nodePs.push_back(&nodes[i]);
     }
 }

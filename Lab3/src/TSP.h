@@ -8,16 +8,21 @@
 #include <iostream>
 
 #include "Algorithm.h"
+#include "fileIn.h"
 #include "bruteTSP.h"
 #include "DPTSP.h"
+#include "Node.h"
+
 
 class TSP : public Algorithm{
 private:
     int algo;
+    fileIn file;
 
 public:
     TSP();
 
+    void load(std::string fileName);
     void select(int n);
     void execute();
     void printSolution();
