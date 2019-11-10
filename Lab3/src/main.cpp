@@ -7,7 +7,7 @@ int main() {
     Algorithm * d = new TSP();
     //d->load("../pos.txt");
     //d->load("../pos10.txt");
-    d->load("../pos9.txt");
+    d->load("../sampleGraphs/pos7.txt");
     for(int i = Algorithm::BRUTETSP; i != Algorithm::LAST;i++)
     {
         d->select(i);

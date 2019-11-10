@@ -8,7 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
+#include <cmath>
+#include <chrono>
 
 #include "Node.h"
 
@@ -17,10 +18,16 @@ class dynamicProgTSP {
 
 private:
     std::vector<Node> nodes;
+    std::vector<std::vector<float>> dist;
+
+    std::vector<int> visited;
+    std::vector<Node> path;
 
 public:
     dynamicProgTSP(std::vector<Node>* nList);
-
+    void calcDist();
+    int findMin(int index);
+    bool isVisited(int id);
     void run();
 
 };

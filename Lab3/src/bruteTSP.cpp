@@ -4,11 +4,13 @@
 
 #include "bruteTSP.h"
 
+// Set nodes to the vector of node pointers
 bruteTSP::bruteTSP(std::vector<Node*> nList)
 {
     nodes = nList;
 }
 
+// Calculate the distance for a particular permutation
 float bruteTSP::calcDist()
 {
     float distance = 0;
@@ -25,6 +27,7 @@ float bruteTSP::calcDist()
     return distance;
 }
 
+// When smaller distance is found, save the current node order into a vector of nodes
 void bruteTSP::buildShortestPath()
 {
     if(shortestPath.size() != 0)
@@ -34,11 +37,13 @@ void bruteTSP::buildShortestPath()
         shortestPath.push_back(*nodes[i]);
 }
 
+// Use next_permutation to get every combination of the vector of node pointers
 void bruteTSP::run()
 {
     std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
     float lowestFound = -1;
-    while(std::next_permutation(nodes.begin() + 1, nodes.end()))
+    nodes.push_back(nodes[0]); // Push starting node onto back to get path back to starting node
+    while(std::next_permutation(nodes.begin() + 1, nodes.end() - 1))
     {
         float dist = 0;
         dist = calcDist();

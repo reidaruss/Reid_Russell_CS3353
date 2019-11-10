@@ -4,7 +4,7 @@
 
 #include "fileIn.h"
 
-
+// Populate vector of nodes in order, then create vector of node pointers for next_permutation
 void fileIn::readFile()
 {
     std::ifstream file;
@@ -43,6 +43,7 @@ void fileIn::readFile()
 
 }
 
+// Used for file input debugging purposes
 void fileIn::printNodes()
 {
     for(int i = 0; i < nodes.size(); i++)

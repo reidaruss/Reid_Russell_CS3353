@@ -14,6 +14,7 @@ Node::Node(int id)
     nodeId = id;
 }
 
+// Setting each position in position vector.
 void Node::setPos(std::vector<float> pos)
 {
     for(int i = 0; i < pos.size(); i ++)
@@ -22,6 +23,7 @@ void Node::setPos(std::vector<float> pos)
     }
 }
 
+// Used in debugging to ensure nodes are assigned correct positions
 void Node::print()
 {
     std::cout << "Node ID: " << nodeId << " Position: " << position[0] << "," << position[1] << "," << position[2];
