@@ -17,10 +17,14 @@
 class dynamicProgTSP {
 
 private:
+    float tCost;
+
     std::vector<Node> nodes;
     std::vector<std::vector<float>> dist;
 
-    std::vector<int> visited;
+    std::vector<float> subtrees;
+    std::vector<std::vector<bool> > state;
+
     std::vector<Node> path;
 
 public:
@@ -28,6 +32,7 @@ public:
     void calcDist();
     int findMin(int index);
     bool isVisited(int id);
+    float tsp(int node, std::vector<bool> visited);
     void run();
 
 };
