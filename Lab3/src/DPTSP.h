@@ -3,7 +3,6 @@
 //
 //
 
-
 #ifndef LAB3_DPTSP_H
 #define LAB3_DPTSP_H
 
@@ -22,11 +21,11 @@ private:
     float tCost;
     std::vector<Node> shortestPath;
 
-    std::vector<Node> nodes;
-    std::vector<std::vector<float>> dist;
+    std::vector<Node> nodes;    //the list of nodes
+    std::vector<std::vector<float>> dist;   // Matrix of precalculated distances
 
-    std::vector<std::vector<float>> subtrees;
-    std::vector<Node> path;
+    std::vector<std::vector<float>> subtrees;   //the lookup table for minimum distances given state
+    std::vector<Node> path; // parallel vector to minDists that tracks the correlation of the next node to minDist
     std::vector<float> minDists;
 
     std::chrono::duration<double> runtime;

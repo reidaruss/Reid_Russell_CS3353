@@ -1,10 +1,13 @@
 //
 // Created by Reid Russell on 11/5/19.
 //
-// Referenced this video: https://codingblocks.com/resources/travelling-salesman/
+// References : https://medium.com/basecs/speeding-up-the-traveling-salesman-using-dynamic-programming-b76d7552e8dd
+//            : https://codingblocks.com/resources/travelling-salesman/
+//            : https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
+//            : https://www.geeksforgeeks.org/travelling-salesman-problem-set-1/
+//            : https://www.geeksforgeeks.org/travelling-salesman-problem-set-2-approximate-using-mst/
 //
-//
-//
+
 
 #include "DPTSP.h"
 
@@ -103,16 +106,15 @@ void dynamicProgTSP::constructPath()
 
     //Initial position, distance and setting visited to the first node.
     int pos = 0;
-    float dist = 0;
+    float tempDist = 0;
     int visited = 1;
-
     for(int i = 0; i < path.size(); i++)
     {
         p.push_back(nodes[pos]);
-        dist = subtrees[visited][pos];
+        tempDist = subtrees[visited][pos];
         for(int j = minDists.size()-1; j > 0; j--)
         {
-            if(minDists[j] == dist)
+            if(minDists[j] == tempDist )
             {
                 pos = path[j].getId()-1;
                 break;
