@@ -19,7 +19,8 @@ void fileIn::readFile()
             std::getline(file, line, '\n');  //get the node to assign position to
             std::istringstream iss(line);
             std::getline(iss, item, ',');
-            Node n = stoi(item);
+            Node n;
+            n.setId(stoi(item));
             std::getline(iss, item, ',');
             float x = stof(item);
             pos.push_back(x);
@@ -43,14 +44,6 @@ void fileIn::readFile()
 
 }
 
-// Used for file input debugging purposes
-void fileIn::printNodes()
-{
-    for(int i = 0; i < nodes.size(); i++)
-    {
-        nodes[i].print();
-    }
-}
 
 // Creates a vector of Node pointers to be used with next_permutation in brute force TSP
 void fileIn::setNodePs()

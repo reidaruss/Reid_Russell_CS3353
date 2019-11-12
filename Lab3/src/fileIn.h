@@ -26,7 +26,6 @@ public:
     void setFileName(std::string file) {fileName = file;}
     void readFile();
     void setNodePs();
-    void printNodes();
 
     std::vector<Node> getNodes() {return nodes;}
     std::vector<Node*> getNodePs() {return nodePs;}
