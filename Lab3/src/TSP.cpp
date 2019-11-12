@@ -41,6 +41,7 @@ void TSP::execute()
     {
         dynamicProgTSP * dynProgTSP = new dynamicProgTSP(&nodes);
         dynProgTSP->run();
+        std::cout << "Runtime of Dynamic Programming: " << dynProgTSP->getRunTime() << std::endl;
         delete dynProgTSP;
     }
 
