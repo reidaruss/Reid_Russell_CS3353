@@ -37,11 +37,12 @@ public:
 
     void calcDist();
     float tsp(int visited, int pos);
-
-    std::vector<Node> constructPath();
+    void constructPath();
     void run();
 
     float getRunTime() {return runtime.count();}
+    std::vector<Node> getShortestPath() {return shortestPath;}
+    float getTotalCost(){return tCost;}
 };
 
 #endif //LAB3_DPTSP_H

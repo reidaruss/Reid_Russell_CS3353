@@ -20,6 +20,8 @@ private:
     std::vector<Node> shortestPath;
     std::chrono::duration<double> runtime;
 
+    float tCost;
+
 public:
     bruteTSP(std::vector<Node*> nList);
 
@@ -27,7 +29,10 @@ public:
 
     float calcDist();
     void run();
+
     float getRunTime() {return runtime.count();}
+    std::vector<Node> getShortestPath() {return shortestPath;}
+    float getTotalCost(){return tCost;}
 
 
 };

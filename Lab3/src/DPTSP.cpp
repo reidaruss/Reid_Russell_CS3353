@@ -12,10 +12,15 @@ dynamicProgTSP::dynamicProgTSP(std::vector<Node>* nList)
 {
     nodes = *nList;
     tCost = 0;
+
+    //Stores the minimum distance for subtrees given a state. Used to work backwards to construct path.
     subtrees = std::vector<std::vector<float>> ((00000001<<nodes.size()) -1, std::vector<float> (nodes.size(),-1));
+
+    //dist is the matrix of precalculated distances between nodes.
     dist = std::vector<std::vector<float>> (nodes.size(), std::vector<float> (nodes.size(),-1));
 }
 
+// Populates the matrix of distances. Have to be careful because each nodeId is not necessarily the index.
 void dynamicProgTSP::calcDist()
 {
     for(int i = 0; i < nodes.size(); i++)
@@ -40,7 +45,9 @@ void dynamicProgTSP::calcDist()
 
 
 
-
+// The travelling salesman problem using bitshifting to store a state (visited) so that once the minimum distance of a
+// subtree given a state has already been calculated, it does not have to be re-calculated because the vector of vectors
+// 'subtrees' acts as a lookup table for minimum calculated distances of subtrees.
 float dynamicProgTSP::tsp(int visited, int pos) {
 
     //Check if we have visited all of the nodes and if so return the distance from the current node to the starting node.
@@ -87,7 +94,9 @@ float dynamicProgTSP::tsp(int visited, int pos) {
     return subtrees[visited][pos] = minDist;
 }
 
-std::vector<Node> dynamicProgTSP::constructPath()
+// Loops through path and minDists (parallel vectors) and works backwards from the total minDist to find
+// the next node that is correlated to the minDist.
+void dynamicProgTSP::constructPath()
 {
     //Will end up being the final path
     std::vector<Node> p;
@@ -97,7 +106,6 @@ std::vector<Node> dynamicProgTSP::constructPath()
     float dist = 0;
     int visited = 1;
 
-    //Loop through the path
     for(int i = 0; i < path.size(); i++)
     {
         p.push_back(nodes[pos]);
@@ -119,34 +127,29 @@ std::vector<Node> dynamicProgTSP::constructPath()
         }
     }
 
+    //Push back origin node
     p.push_back(nodes[0]);
-    return p;
+    shortestPath = p;
 }
+
+// The function that runs the dp solution.
+// First populates the distance matrix
+// Then finds the minimum distance through the graph using bitshifting
+// Then constructs the path working backwards from the minimum distances of subtrees and the next node associated.
 
 void dynamicProgTSP::run()
 {
     std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 
-
     calcDist();
-    int mask = 00000001;
+    int mask = 1;
     std::vector<Node> p;
     std::vector<Node> subPath;
-    tCost = tsp(mask,0, p);
-    std::vector<Node> fPath = constructPath();
-
-    std::cout << "DP: " << std::endl;
-    std::cout << "Cost of path: " << tCost << std::endl;
-    for(int i = 0; i < fPath.size(); i++)
-    {
-        std::cout << fPath[i].getId() << "->";
-    }
-    std::cout << std::endl;
-
+    tCost = tsp(mask,0);
+    constructPath();
 
     std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
     runtime = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
-
 }
 
 

@@ -33,7 +33,11 @@ void TSP::execute()
     {
         bruteTSP * bTSP = new bruteTSP(file.getNodePs());
         bTSP->run();
-        std::cout << "Runtime of Brute Force: " << bTSP->getRunTime() << std::endl;
+
+        bruteRuntime = bTSP->getRunTime();
+        bruteShortestPath = bTSP->getShortestPath();
+        bruteTotalDist = bTSP->getTotalCost();
+
         delete bTSP;
     }
     // Dynamic Programming TSP
@@ -41,7 +45,11 @@ void TSP::execute()
     {
         dynamicProgTSP * dynProgTSP = new dynamicProgTSP(&nodes);
         dynProgTSP->run();
-        std::cout << "Runtime of Dynamic Programming: " << dynProgTSP->getRunTime() << std::endl;
+
+        dpRuntime = dynProgTSP->getRunTime();
+        dpShortestPath = dynProgTSP->getShortestPath();
+        dpTotalDist = dynProgTSP->getTotalCost();
+
         delete dynProgTSP;
     }
 
@@ -49,5 +57,44 @@ void TSP::execute()
 
 void TSP::printSolution()
 {
+    // Invalid Algorithm Selected
+    if(algo == -1)
+    {
+        std::cout << "Algorithm not selected or invalid selection." << std::endl;
+    }
+    // Brute Force TSP
+    else if(algo == 0)
+    {
+        std::cout << "Brute Force TSP:::::::::::::::" << std::endl;
+        std::cout << "Runtime of Brute Force: " << bruteRuntime << std::endl;
+        std::cout << "Shortest Path: ";
+        for(int i = 0; i < bruteShortestPath.size(); i++)
+        {
+            std::cout << bruteShortestPath[i].getId();
+            if(i != bruteShortestPath.size() - 1)
+                std::cout << " -> ";
+        }
+        std::cout << std::endl;
+        std::cout << "Total Distance: " << bruteTotalDist << std::endl;
+        std::cout <<"___________________________________" << std::endl;
+
+    }
+    // Dynamic Programming TSP
+    else if(algo == 1)
+    {
+        std::cout << "DP TSP:::::::::::::::" << std::endl;
+        std::cout << "Runtime of DP: " << dpRuntime << std::endl;
+        std::cout << "Shortest Path: ";
+        for(int i = 0; i < dpShortestPath.size(); i++)
+        {
+            std::cout << dpShortestPath[i].getId();
+            if(i != dpShortestPath.size() - 1)
+                std::cout << " -> ";
+        }
+        std::cout << std::endl;
+        std::cout << "Total Distance: " << dpTotalDist << std::endl;
+        std::cout <<"___________________________________" << std::endl;
+
+    }
 
 }

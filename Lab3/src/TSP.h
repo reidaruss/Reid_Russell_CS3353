@@ -19,6 +19,15 @@ private:
     int algo;
     fileIn file;
 
+    float bruteRuntime;
+    float dpRuntime;
+
+    std::vector<Node> bruteShortestPath;
+    std::vector<Node> dpShortestPath;
+
+    float bruteTotalDist;
+    float dpTotalDist;
+
 public:
     TSP();
 

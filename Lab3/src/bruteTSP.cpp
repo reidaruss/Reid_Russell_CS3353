@@ -56,13 +56,11 @@ void bruteTSP::run()
             buildShortestPath();
         }
     }
+    tCost = lowestFound;
+
     std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
     runtime = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
 
-    std::cout << "Shortest distance found = " << lowestFound << std::endl;
-    for(int i = 0; i < shortestPath.size(); i++)
-        std::cout << shortestPath[i].getId() << "->";
-    std::cout << std::endl;
 }
 
 
