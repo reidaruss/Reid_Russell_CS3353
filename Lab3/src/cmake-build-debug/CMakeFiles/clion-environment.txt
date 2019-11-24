@@ -1,3 +1,4 @@
-ToolSet: 1.0 (local)Options: 
+ToolSet: Kali GNU/Linux Rolling (local)@C:\Users\Reid Russell\AppData\Local\Microsoft\WindowsApps\kali.exe
+Options: 
 
 Options:
