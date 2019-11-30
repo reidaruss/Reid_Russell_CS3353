@@ -5,11 +5,10 @@
 #ifndef LAB4_INDIVIDUAL_H
 #define LAB4_INDIVIDUAL_H
 
-#include <iostream>
 #include <string>
 #include <cstdlib>
-#include <stdio.h>
-#include <time.h>
+#include <ctime>
+#include <vector>
 
 class Individual {
 private:
@@ -19,15 +18,21 @@ private:
     int fitness;
 
 public:
+    Individual();
     Individual(std::string chromosome);
+    bool operator < (Individual const & ind);
+//    bool operator = (Individual const & ind);
     Individual mate(Individual parent2);
     int cal_fitness();
     float randNum(float start, float end);
     char mutatedGenes();
-    std::string newGenome();
+    std::string newGnome();
+    void sortInds(std::vector<Individual>& pop);
+    bool operator > (Individual const & ind);
+
 
     int getFitness(){return fitness;}
-    std::string getChromosone(){return chromosome;}
+    std::string getChromosome(){return chromosome;}
 };
 
 

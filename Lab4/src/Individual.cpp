@@ -5,6 +5,14 @@
 #include "Individual.h"
 
 
+Individual::Individual()
+{
+    TARGET = "I love GeeksforGeeks";
+    GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP ";
+    this->chromosome = newGnome();
+    fitness = cal_fitness();
+}
+
 Individual::Individual(std::string chromosome)
 {
     TARGET = "I love GeeksforGeeks";
@@ -12,6 +20,39 @@ Individual::Individual(std::string chromosome)
     this->chromosome = chromosome;
     fitness = cal_fitness();
 }
+
+bool Individual::operator <(Individual const& ind)
+{
+    return this->fitness < ind.fitness;
+}
+
+bool Individual::operator >(Individual const& ind)
+{
+    return this->fitness > ind.fitness;
+}
+
+void Individual::sortInds(std::vector<Individual>& pop)
+{
+    int j;
+    Individual key;
+    for(int i = 0; i < pop.size(); i ++)
+    {
+        key = pop[i];
+        j = i-1;
+
+        while(j >= 0 && pop[j] > key)
+        {
+            pop[j+1] = pop[j];
+            j = j-1;
+        }
+        pop[j + 1] = key;
+    }
+}
+
+//bool Individual::operator=(Individual const &ind)
+//{
+//    return this->fitness == ind.fitness;
+//}
 
 // Perform mating and produce new offspring
 Individual Individual::mate(Individual par2)
@@ -76,4 +117,13 @@ char Individual::mutatedGenes()
     int len = GENES.size();
     int r = randNum(0, len-1);
     return GENES[r];
+}
+
+std::string Individual::newGnome()
+{
+    int len = TARGET.length();
+    std::string gnome = "";
+    for(int i = 0;i<len;i++)
+        gnome += mutatedGenes();
+    return gnome;
 }

@@ -4,32 +4,49 @@
 
 #include "GA.h"
 
-GA::GA()
+Genetic_Algo::Genetic_Algo()
 {
     popSize = 100;
 }
 
-void GA::execute()
+float Genetic_Algo::randNum(float start, float end)
+{
+    int range = (end-start)+1;
+    int random_int = start+(rand()%range);
+    return random_int;
+}
+
+void Genetic_Algo::sortPop()
+{
+
+}
+
+
+
+
+void Genetic_Algo::execute()
 {
     srand((unsigned)(time(0)));
 
     // current generation
     int generation = 0;
 
-    std::vector<Individual> population;
     bool found = false;
 
     // create initial population
     for(int i = 0;i<popSize;i++)
     {
-        std::string gnome = createGnome();
-        population.push_back(Individual(gnome));
+        Individual ind;
+        population.push_back(ind);
     }
 
     while(!found)
     {
         // sort the population in increasing order of fitness score
-        sort(population.begin(), population.end());
+        //std::sort(population.begin(), population.end());
+        //sortPop();
+        population[0].sortInds(population);
+
 
         // if the individual having lowest fitness score ie.
         // 0 then we know that we have reached to the target

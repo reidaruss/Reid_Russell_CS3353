@@ -27,12 +27,13 @@ void TSP::execute()
     {
         std::cout << "Algorithm not selected or invalid selection." << std::endl;
     }
-        // Brute Force TSP
+        // GA
     else if(algo == 0)
     {
-
+        Genetic_Algo g;
+        g.execute();
     }
-        // Dynamic Programming TSP
+        // Tabu
     else if(algo == 1)
     {
 

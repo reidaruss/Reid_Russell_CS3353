@@ -10,7 +10,8 @@
 #include "Algorithm.h"
 #include "file.h"
 #include "Node.h"
-
+#include "GA.h"
+//#include "Individual.h"
 
 class TSP : public Algorithm{
 private:

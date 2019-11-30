@@ -15,7 +15,7 @@ public:
     virtual void execute() = 0;
     virtual void printSolution() = 0;
 
-    enum algos{BRUTETSP=0,DPTSP,LAST};
+    enum algos{GA=0,TB,LAST};
 };
 
 #endif //LAB4_ALGORITHM_H

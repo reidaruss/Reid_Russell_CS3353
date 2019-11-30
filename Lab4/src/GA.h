@@ -10,11 +10,16 @@
 
 #include "Individual.h"
 
-class GA {
+class Genetic_Algo {
 private:
     int popSize;
+    std::vector<Individual> population;
 public:
-    GA();
+    Genetic_Algo();
+
+    float randNum(float start, float end);
+    std::string newGnome();
+    void sortPop();
     void execute();
 
 
