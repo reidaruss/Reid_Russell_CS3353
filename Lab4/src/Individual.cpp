@@ -5,20 +5,19 @@
 #include "Individual.h"
 
 
-Individual::Individual()
-{
-    TARGET = "I love GeeksforGeeks";
-    GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP ";
-    this->chromosome = newGnome();
-    fitness = cal_fitness();
-}
+//Individual::Individual()
+//{
+//    TARGET = "Where is the pie?";
+//    GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ? ";
+//    this->chromosome = newGnome();
+//    fitness = cal_fitness();
+//}
 
-Individual::Individual(std::string chromosome)
+Individual::Individual(std::vector<Node> chromosome, std::vector<Node>* n)
 {
-    TARGET = "I love GeeksforGeeks";
-    GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP";
+    this->nodes = *n;
     this->chromosome = chromosome;
-    fitness = cal_fitness();
+    fitness = calcDist();
 }
 
 bool Individual::operator <(Individual const& ind)
@@ -34,7 +33,7 @@ bool Individual::operator >(Individual const& ind)
 void Individual::sortInds(std::vector<Individual>& pop)
 {
     int j;
-    Individual key;
+    Individual key = pop[0];
     for(int i = 0; i < pop.size(); i ++)
     {
         key = pop[i];
@@ -58,50 +57,91 @@ void Individual::sortInds(std::vector<Individual>& pop)
 Individual Individual::mate(Individual par2)
 {
     // chromosome for offspring
-    std::string child_chromosome = "";
-
+    std::vector<Node> child_chromosome;
+    std::vector<Node> parB = par2.getChromosome();
+    child_chromosome.push_back(nodes[0]);
     int len = chromosome.size();
-    for(int i = 0;i<len;i++)
-    {
-        // random probability
-        float p = randNum(0, 100)/100;
+    while(child_chromosome.size() < nodes.size()) {
+        for (int i = 0; i < len; i++) {
+            // random probability
+            float p = randNum(0, 100) / 100;
 
-        // if prob is less than 0.45, insert gene
-        // from parent 1
-        if(p < 0.45)
-            child_chromosome += chromosome[i];
+            // if prob is less than 0.45, insert gene
+            // from parent 1
 
-            // if prob is between 0.45 and 0.90, insert
-            // gene from parent 2
-        else if(p < 0.90)
-            child_chromosome += par2.chromosome[i];
+            if (p < 0.45) {
+                for (int j = 0; j < child_chromosome.size(); j++) {
+                    if (chromosome[i].getId() == child_chromosome[j].getId())
+                        break;
+                    else if (j == child_chromosome.size() - 1)
+                        child_chromosome.push_back(chromosome[i]);
+                }
+            }
+                // if prob is between 0.45 and 0.90, insert
+                // gene from parent 2
+            else if (p < 0.90) {
+                for (int j = 0; j < child_chromosome.size(); j++) {
+                    if (parB[i].getId() == child_chromosome[j].getId())
+                        break;
+                    else if (j == child_chromosome.size() - 1)
+                        child_chromosome.push_back(parB[i]);
+                }
+            }
 
-            // otherwise insert random gene(mutate),
-            // for maintaining diversity
-        else
-            child_chromosome += mutatedGenes();
+                // otherwise insert random gene(mutate),
+                // for maintaining diversity
+            else {
+                Node n = mutatedGenes();
+                for (int j = 0; j < child_chromosome.size(); j++) {
+                    if (n.getId() == child_chromosome[j].getId())
+                        break;
+                    else if (j == child_chromosome.size() - 1)
+                        child_chromosome.push_back(n);
+                }
+            }
+
+
+        }
     }
 
+    child_chromosome.push_back(nodes[0]);
     // create new Individual(offspring) using
     // generated chromosome for offspring
-    return Individual(child_chromosome);
+    return Individual(child_chromosome, &nodes);
 }
 
 
 // Calculate fittness score, it is the number of
 // characters in string which differ from target
 // string.
-int Individual::cal_fitness()
+// Calculate the distance for a particular permutation
+float Individual::calcDist()
 {
-    int len = TARGET.size();
-    int fitness = 0;
-    for(int i = 0;i<len;i++)
+    float distance = 0;
+    for(int i = 0; i < nodes.size() -1; i++)
     {
-        if(chromosome[i] != TARGET[i])
-            fitness++;
+        std::vector<float> posA = chromosome[i].getPos();
+        std::vector<float> posB = chromosome[i+1].getPos();
+        float tempDist = 0;
+        tempDist =  std::sqrt(std::pow(posB[0]-posA[0],2) + std::pow(posB[1]-posA[1],2)
+                              + std::pow(posB[2]-posA[2],2));
+        distance += tempDist;
     }
-    return fitness;
+
+    return distance;
 }
+
+//int Individual::cal_fitness()
+//{
+//    int len = TARGET.size();
+//    int fitness = 0;
+//    for(int i = 0;i<len;i++)
+//    {
+//        if(chromosome[i] != TARGET[i])
+//            fitness++;
+//    }
+//    return fitness;
+//}
 
 // Function to generate random numbers in given range
 float Individual::randNum(float start, float end)
@@ -112,18 +152,28 @@ float Individual::randNum(float start, float end)
 }
 
 // Create random genes for mutation
-char Individual::mutatedGenes()
+Node Individual::mutatedGenes()
 {
-    int len = GENES.size();
+    int len = nodes.size();
     int r = randNum(0, len-1);
-    return GENES[r];
+    return nodes[r];
 }
 
-std::string Individual::newGnome()
+std::vector<Node> Individual::newGnome()
 {
-    int len = TARGET.length();
-    std::string gnome = "";
-    for(int i = 0;i<len;i++)
-        gnome += mutatedGenes();
+    int len = nodes.size();
+    std::vector<Node> gnome;
+    gnome.push_back(nodes[0]);
+    while(gnome.size() < nodes.size()){
+        Node n = mutatedGenes();
+        for(int j = 0; j < gnome.size(); j++)
+        {
+            if(n.getId() == gnome[j].getId())
+                break;
+            else if(j == gnome.size()-1)
+                gnome.push_back(n);
+        }
+    }
+    gnome.push_back(nodes[0]);
     return gnome;
 }

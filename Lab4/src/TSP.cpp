@@ -21,6 +21,7 @@ void TSP::select(int n)
 
 void TSP::execute()
 {
+
     std::vector<Node> nodes = f.getNodes();
     // Invalid Algorithm Selected
     if(algo == -1)
@@ -30,7 +31,7 @@ void TSP::execute()
         // GA
     else if(algo == 0)
     {
-        Genetic_Algo g;
+        Genetic_Algo g(&nodes, nodes.size());
         g.execute();
     }
         // Tabu

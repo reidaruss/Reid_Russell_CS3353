@@ -5,34 +5,40 @@
 #ifndef LAB4_INDIVIDUAL_H
 #define LAB4_INDIVIDUAL_H
 
+#include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <cmath>
+
+#include "Node.h"
 
 class Individual {
 private:
-    std::string GENES;
-    std::string TARGET;
-    std::string chromosome;
-    int fitness;
+    std::vector<Node> nodes;
+    std::vector<Node> chromosome;
+    float fitness;
 
 public:
-    Individual();
-    Individual(std::string chromosome);
+    //Individual();
+    Individual(std::vector<Node> chromosome, std::vector<Node>* n);
     bool operator < (Individual const & ind);
 //    bool operator = (Individual const & ind);
     Individual mate(Individual parent2);
-    int cal_fitness();
+
+    float calcDist();
+    //int cal_fitness();
+
     float randNum(float start, float end);
-    char mutatedGenes();
-    std::string newGnome();
+    Node mutatedGenes();
+    std::vector<Node> newGnome();
     void sortInds(std::vector<Individual>& pop);
     bool operator > (Individual const & ind);
 
 
-    int getFitness(){return fitness;}
-    std::string getChromosome(){return chromosome;}
+    float getFitness(){return fitness;}
+    std::vector<Node> getChromosome(){return chromosome;}
 };
 
 

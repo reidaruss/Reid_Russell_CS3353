@@ -4,9 +4,11 @@
 CMakeFiles/Lab4.dir/src/GA.cpp.o: ../src/GA.cpp
 CMakeFiles/Lab4.dir/src/GA.cpp.o: ../src/GA.h
 CMakeFiles/Lab4.dir/src/GA.cpp.o: ../src/Individual.h
+CMakeFiles/Lab4.dir/src/GA.cpp.o: ../src/Node.h
 
 CMakeFiles/Lab4.dir/src/Individual.cpp.o: ../src/Individual.cpp
 CMakeFiles/Lab4.dir/src/Individual.cpp.o: ../src/Individual.h
+CMakeFiles/Lab4.dir/src/Individual.cpp.o: ../src/Node.h
 
 CMakeFiles/Lab4.dir/src/Node.cpp.o: ../src/Node.cpp
 CMakeFiles/Lab4.dir/src/Node.cpp.o: ../src/Node.h

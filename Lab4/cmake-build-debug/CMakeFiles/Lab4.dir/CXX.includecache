@@ -6,16 +6,40 @@
 
 #IncludeRegexTransform: 
 
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Individual.cpp
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.cpp
+GA.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.h
+string
+-
+iostream
+-
+vector
+-
 Individual.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Individual.h
+Node.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
 
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Individual.h
+iostream
+-
 string
 -
 cstdlib
 -
 ctime
+-
+vector
+-
+cmath
+-
+Node.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
+iostream
 -
 vector
 -
