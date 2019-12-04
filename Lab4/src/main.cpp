@@ -12,7 +12,7 @@ int main() {
 
     //Please place test graphs in sampleGraphs and modify filePaths with the desired graphs.
     //std::string filePaths[] = {"../sampleGraphs/pos.txt","../sampleGraphs/pos5.txt","../sampleGraphs/pos6.txt","../sampleGraphs/pos7.txt","../sampleGraphs/pos8.txt","../sampleGraphs/pos9.txt","../sampleGraphs/pos10.txt","../sampleGraphs/pos11.txt","../sampleGraphs/pos12.txt" };
-    std::string filePaths[] = {"../src/sampleGraphs/23.txt"};
+    std::string filePaths[] = {"../src/sampleGraphs/pos10.txt"};
 
     //for(int j = 0; j < 9; j++) {
         Algorithm * d = new TSP();
