@@ -10,16 +10,27 @@ CMakeFiles/Lab4.dir/src/Individual.cpp.o: ../src/Individual.cpp
 CMakeFiles/Lab4.dir/src/Individual.cpp.o: ../src/Individual.h
 CMakeFiles/Lab4.dir/src/Individual.cpp.o: ../src/Node.h
 
+CMakeFiles/Lab4.dir/src/Neighbor.cpp.o: ../src/Neighbor.cpp
+CMakeFiles/Lab4.dir/src/Neighbor.cpp.o: ../src/Neighbor.h
+CMakeFiles/Lab4.dir/src/Neighbor.cpp.o: ../src/Node.h
+
 CMakeFiles/Lab4.dir/src/Node.cpp.o: ../src/Node.cpp
 CMakeFiles/Lab4.dir/src/Node.cpp.o: ../src/Node.h
 
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/Algorithm.h
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/GA.h
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/Individual.h
+CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/Neighbor.h
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/Node.h
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/TSP.cpp
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/TSP.h
+CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/Tabu.h
 CMakeFiles/Lab4.dir/src/TSP.cpp.o: ../src/file.h
+
+CMakeFiles/Lab4.dir/src/Tabu.cpp.o: ../src/Neighbor.h
+CMakeFiles/Lab4.dir/src/Tabu.cpp.o: ../src/Node.h
+CMakeFiles/Lab4.dir/src/Tabu.cpp.o: ../src/Tabu.cpp
+CMakeFiles/Lab4.dir/src/Tabu.cpp.o: ../src/Tabu.h
 
 CMakeFiles/Lab4.dir/src/file.cpp.o: ../src/Node.h
 CMakeFiles/Lab4.dir/src/file.cpp.o: ../src/file.cpp
@@ -28,8 +39,10 @@ CMakeFiles/Lab4.dir/src/file.cpp.o: ../src/file.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/Algorithm.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/GA.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/Individual.h
+CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/Neighbor.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/Node.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/TSP.h
+CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/Tabu.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/file.h
 CMakeFiles/Lab4.dir/src/main.cpp.o: ../src/main.cpp
 

@@ -5,13 +5,6 @@
 #include "Individual.h"
 
 
-//Individual::Individual()
-//{
-//    TARGET = "Where is the pie?";
-//    GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ? ";
-//    this->chromosome = newGnome();
-//    fitness = cal_fitness();
-//}
 
 Individual::Individual(std::vector<Node> chromosome, std::vector<Node>* n)
 {
@@ -116,7 +109,7 @@ Individual Individual::mate(Individual par2)
 float Individual::calcDist()
 {
     float distance = 0;
-    for(int i = 0; i < nodes.size() -1; i++)
+    for(int i = 0; i < chromosome.size() -1; i++)
     {
         std::vector<float> posA = chromosome[i].getPos();
         std::vector<float> posB = chromosome[i+1].getPos();

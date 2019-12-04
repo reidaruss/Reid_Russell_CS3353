@@ -16,10 +16,10 @@ private:
 
 public:
     Node();
-    void setPos(std::vector<float> pos);
 
+    void setPos(std::vector<float> pos);
     void setId(int id) {nodeId = id;}
-    int getId() {return nodeId;}
+    int getId()const {return nodeId;}
     std::vector<float> getPos() {return position;}
     float getPosAt(int i) {return position[i];}
 

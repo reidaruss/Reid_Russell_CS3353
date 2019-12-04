@@ -11,6 +11,7 @@
 #include "file.h"
 #include "Node.h"
 #include "GA.h"
+#include "Tabu.h"
 //#include "Individual.h"
 
 class TSP : public Algorithm{

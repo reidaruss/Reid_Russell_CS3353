@@ -31,13 +31,14 @@ void TSP::execute()
         // GA
     else if(algo == 0)
     {
-        Genetic_Algo g(&nodes, nodes.size());
-        g.execute();
+//        Genetic_Algo g(&nodes, nodes.size());
+//        g.execute();
     }
         // Tabu
     else if(algo == 1)
     {
-
+        Tabu t(&nodes);
+        t.execute();
     }
 
 }

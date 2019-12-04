@@ -177,6 +177,33 @@ src/Individual.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Individual.cpp.s
 .PHONY : src/Individual.cpp.s
 
+src/Neighbor.o: src/Neighbor.cpp.o
+
+.PHONY : src/Neighbor.o
+
+# target to build an object file
+src/Neighbor.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Neighbor.cpp.o
+.PHONY : src/Neighbor.cpp.o
+
+src/Neighbor.i: src/Neighbor.cpp.i
+
+.PHONY : src/Neighbor.i
+
+# target to preprocess a source file
+src/Neighbor.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Neighbor.cpp.i
+.PHONY : src/Neighbor.cpp.i
+
+src/Neighbor.s: src/Neighbor.cpp.s
+
+.PHONY : src/Neighbor.s
+
+# target to generate assembly for a file
+src/Neighbor.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Neighbor.cpp.s
+.PHONY : src/Neighbor.cpp.s
+
 src/Node.o: src/Node.cpp.o
 
 .PHONY : src/Node.o
@@ -230,6 +257,33 @@ src/TSP.s: src/TSP.cpp.s
 src/TSP.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/TSP.cpp.s
 .PHONY : src/TSP.cpp.s
+
+src/Tabu.o: src/Tabu.cpp.o
+
+.PHONY : src/Tabu.o
+
+# target to build an object file
+src/Tabu.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Tabu.cpp.o
+.PHONY : src/Tabu.cpp.o
+
+src/Tabu.i: src/Tabu.cpp.i
+
+.PHONY : src/Tabu.i
+
+# target to preprocess a source file
+src/Tabu.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Tabu.cpp.i
+.PHONY : src/Tabu.cpp.i
+
+src/Tabu.s: src/Tabu.cpp.s
+
+.PHONY : src/Tabu.s
+
+# target to generate assembly for a file
+src/Tabu.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/src/Tabu.cpp.s
+.PHONY : src/Tabu.cpp.s
 
 src/file.o: src/file.cpp.o
 
@@ -300,12 +354,18 @@ help:
 	@echo "... src/Individual.o"
 	@echo "... src/Individual.i"
 	@echo "... src/Individual.s"
+	@echo "... src/Neighbor.o"
+	@echo "... src/Neighbor.i"
+	@echo "... src/Neighbor.s"
 	@echo "... src/Node.o"
 	@echo "... src/Node.i"
 	@echo "... src/Node.s"
 	@echo "... src/TSP.o"
 	@echo "... src/TSP.i"
 	@echo "... src/TSP.s"
+	@echo "... src/Tabu.o"
+	@echo "... src/Tabu.i"
+	@echo "... src/Tabu.s"
 	@echo "... src/file.o"
 	@echo "... src/file.i"
 	@echo "... src/file.s"

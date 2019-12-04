@@ -95,6 +95,12 @@
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Individual.h">
 			<Option target="Lab4"/>
 		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Neighbor.cpp">
+			<Option target="Lab4"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Neighbor.h">
+			<Option target="Lab4"/>
+		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.cpp">
 			<Option target="Lab4"/>
 		</Unit>
@@ -105,6 +111,12 @@
 			<Option target="Lab4"/>
 		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h">
+			<Option target="Lab4"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Tabu.cpp">
+			<Option target="Lab4"/>
+		</Unit>
+		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Tabu.h">
 			<Option target="Lab4"/>
 		</Unit>
 		<Unit filename="/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/file.cpp">

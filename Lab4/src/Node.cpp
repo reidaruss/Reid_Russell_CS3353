@@ -9,6 +9,7 @@ Node::Node()
 }
 
 
+
 // Setting each position in position vector.
 void Node::setPos(std::vector<float> pos)
 {

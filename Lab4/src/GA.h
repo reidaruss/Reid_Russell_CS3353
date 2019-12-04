@@ -21,8 +21,6 @@ public:
 
 
     float randNum(float start, float end);
-    std::string newGnome();
-    void sortPop();
     void execute();
 
 

@@ -7,7 +7,8 @@
 Genetic_Algo::Genetic_Algo(std::vector<Node>* n, int size)
 {
     nodes = *n;
-    popSize = nodes.size()*20;
+    popSize = nodes.size()*15;
+    //popSize = 1000;
 //    popSize = 50;
 
 }
