@@ -7,7 +7,9 @@
 Genetic_Algo::Genetic_Algo(std::vector<Node>* n, int size)
 {
     nodes = *n;
-    popSize = 100;
+    popSize = nodes.size()*20;
+//    popSize = 50;
+
 }
 
 float Genetic_Algo::randNum(float start, float end)
@@ -27,6 +29,8 @@ void Genetic_Algo::execute()
     int generation = 0;
 
     bool found = false;
+    int difCounter = 0;
+    float prevDif = 0;
     Individual ind(nodes, &nodes);
     // create initial population
     for(int i = 0;i<popSize;i++)
@@ -43,10 +47,11 @@ void Genetic_Algo::execute()
         // if the individual having lowest fitness score ie.
         // 0 then we know that we have reached to the target
         // and break the loop
-        if(population[9].getFitness() - population[0].getFitness() == 0)
+        float dif = population[popSize/10].getFitness() - population[0].getFitness();
+        if(dif == 0)
         {
             counter ++;
-            if(counter > nodes.size()*2.5)
+            if(counter > nodes.size()*5)
             {
                 found = true;
                 break;
@@ -55,6 +60,23 @@ void Genetic_Algo::execute()
         }
         else
             counter = 0;
+
+        if(prevDif == dif)
+        {
+            if(difCounter >= nodes.size()*(nodes.size()/4))
+            {
+                found = true;
+                break;
+            }
+            else
+                difCounter ++;
+        }
+        else
+        {
+            prevDif = dif;
+            difCounter = 0;
+        }
+
 
 //        if(population[9].getFitness() - population[0].getFitness() < 0.75)
 //        {
@@ -86,21 +108,24 @@ void Genetic_Algo::execute()
         }
         population = new_generation;
         std::cout<< "Generation: " << generation << "\t";
-        std::cout<< "String: ";
-        for(int i = 0; i < population[0].getChromosome().size(); i++)
-        {
-            std::cout << population[0].getChromosome()[i].getId() <<"\t";
-        }
+//        std::cout<< "Path: ";
+//        for(int i = 0; i < population[0].getChromosome().size(); i++)
+//        {
+//            std::cout << population[0].getChromosome()[i].getId() <<"\t";
+//        }
         std::cout<< "Fitness: "<< population[0].getFitness() <<"\t";
-        std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\n";
+        std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\t";
+        std::cout << "Counter: " << counter << "\t";
+        std::cout << "DifCounter: " << difCounter << "\n";
         generation++;
     }
     std::cout<< "Generation: " << generation << "\t";
-    std::cout<< "String: ";
+    std::cout<< "Path: ";
     for(int i = 0; i < population[0].getChromosome().size(); i++)
     {
         std::cout << population[0].getChromosome()[i].getId() <<"\t";
     }
     std::cout<< "Fitness: "<< population[0].getFitness() <<"\t";
-    std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\n";
+    std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\t";
+    std::cout << "DifCounter: " << difCounter << "\n";
 }

@@ -69,7 +69,7 @@ Individual Individual::mate(Individual par2)
             // if prob is less than 0.45, insert gene
             // from parent 1
 
-            if (p < 0.45) {
+            if (p < 0.425) {
                 for (int j = 0; j < child_chromosome.size(); j++) {
                     if (chromosome[i].getId() == child_chromosome[j].getId())
                         break;
@@ -79,7 +79,7 @@ Individual Individual::mate(Individual par2)
             }
                 // if prob is between 0.45 and 0.90, insert
                 // gene from parent 2
-            else if (p < 0.90) {
+            else if (p < 0.875) {
                 for (int j = 0; j < child_chromosome.size(); j++) {
                     if (parB[i].getId() == child_chromosome[j].getId())
                         break;
@@ -111,9 +111,7 @@ Individual Individual::mate(Individual par2)
 }
 
 
-// Calculate fittness score, it is the number of
-// characters in string which differ from target
-// string.
+
 // Calculate the distance for a particular permutation
 float Individual::calcDist()
 {
@@ -131,17 +129,7 @@ float Individual::calcDist()
     return distance;
 }
 
-//int Individual::cal_fitness()
-//{
-//    int len = TARGET.size();
-//    int fitness = 0;
-//    for(int i = 0;i<len;i++)
-//    {
-//        if(chromosome[i] != TARGET[i])
-//            fitness++;
-//    }
-//    return fitness;
-//}
+
 
 // Function to generate random numbers in given range
 float Individual::randNum(float start, float end)
