@@ -2,6 +2,8 @@
 // Created by Reid Russell on 11/23/2019.
 //
 
+// Referenced from https://www.geeksforgeeks.org/genetic-algorithms/
+
 #include "GA.h"
 
 Genetic_Algo::Genetic_Algo(std::vector<Node>* n, int size)
@@ -49,6 +51,9 @@ void Genetic_Algo::execute()
         bestSoln = population[0].getFitness();
         bestAtGen.push_back(bestSoln);
 
+
+        ////// COMMENT OUT WHEN RUNNING UNTIL MAX TIME
+
         // if the individual having lowest fitness score ie.
         // 0 then we know that we have reached to the target
         // and break the loop
@@ -87,7 +92,7 @@ void Genetic_Algo::execute()
         // Otherwise generate new offsprings for new generation
         std::vector<Individual> new_generation;
 
-        // Perform Elitism, that mean 10% of fittest population
+        // Perform Elitism, 10% of fittest population
         // goes to the next generation
         int s = (10*popSize)/100;
         for(int i = 0;i<s;i++)
@@ -107,6 +112,9 @@ void Genetic_Algo::execute()
             new_generation.push_back(offspring);
         }
         population = new_generation;
+
+        //////// STATS ///////
+
 //        std::cout<< "Generation: " << generation << "\t";
 ////        std::cout<< "Path: ";
 ////        for(int i = 0; i < population[0].getChromosome().size(); i++)

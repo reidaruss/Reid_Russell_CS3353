@@ -10,6 +10,10 @@
 iostream
 -
 
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.cpp
+GA.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.h
+
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.h
 string
 -
@@ -62,10 +66,6 @@ iostream
 vector
 -
 
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.cpp
-TSP.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h
-
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h
 iostream
 -
@@ -79,10 +79,6 @@ Node.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
 GA.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/GA.h
-Tabu.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Tabu.h
-
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Tabu.cpp
 Tabu.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Tabu.h
 
@@ -119,4 +115,10 @@ vector
 -
 Node.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
+
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/main.cpp
+Algorithm.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Algorithm.h
+TSP.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h
 

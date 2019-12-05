@@ -1,6 +1,3 @@
-//
-// Created by Reid Russell on 12/4/19.
-//
 
 #ifndef LAB4_NEIGHBOR_H
 #define LAB4_NEIGHBOR_H

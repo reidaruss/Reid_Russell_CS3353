@@ -1,6 +1,3 @@
-//
-// Created by Reid Russell on 12/4/19.
-//
 
 #include "Neighbor.h"
 

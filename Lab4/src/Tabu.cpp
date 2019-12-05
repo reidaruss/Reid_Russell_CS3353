@@ -7,15 +7,14 @@
 /*
 - maxIter is the stopping condition. Once tabu has make maxIter # of moves it will stop and print best found path
 - initialNeighbor is that starting path, that will always start from the first node and end at the first node in the graph.
--
 
  */
 Tabu::Tabu(std::vector<Node>* n)
 {
     nodes = *n;
     neighborhoodSize = nodes.size();
-    maxIter = 2;
-    tListSize = 50;
+    maxIter = 600;
+    tListSize = 150;
     std::vector<Node> initialNeighbor = nodes;
     initialNeighbor.push_back(nodes[0]);
     curr.setPath(initialNeighbor);
@@ -69,17 +68,10 @@ std::vector<Neighbor> Tabu::genNeighbors()
         }
     }
 
-//    for(int j = 1; j < curr.getSize()-3; j++) {
-//        Node t = temp[j];
-//        temp[j] = temp[j + 2];
-//        temp[j + 2] = t;
-//        Neighbor tN(temp);
-//        neighborhood.push_back(tN);
-//    }
     return neighborhood;
 }
 
-void Tabu::getNextMove(std::vector<Neighbor> neighborhood)
+void Tabu::getNextMove(std::vector<Neighbor> neighborhood)  // Insertion sort then choose from front
 {
     int j;
     Neighbor key = neighborhood[0];
