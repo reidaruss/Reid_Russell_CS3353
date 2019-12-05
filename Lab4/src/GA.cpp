@@ -108,16 +108,16 @@ void Genetic_Algo::execute()
             new_generation.push_back(offspring);
         }
         population = new_generation;
-        std::cout<< "Generation: " << generation << "\t";
-//        std::cout<< "Path: ";
-//        for(int i = 0; i < population[0].getChromosome().size(); i++)
-//        {
-//            std::cout << population[0].getChromosome()[i].getId() <<"\t";
-//        }
-        std::cout<< "Fitness: "<< population[0].getFitness() <<"\t";
-        std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\t";
-        std::cout << "Counter: " << counter << "\t";
-        std::cout << "DifCounter: " << difCounter << "\n";
+//        std::cout<< "Generation: " << generation << "\t";
+////        std::cout<< "Path: ";
+////        for(int i = 0; i < population[0].getChromosome().size(); i++)
+////        {
+////            std::cout << population[0].getChromosome()[i].getId() <<"\t";
+////        }
+//        std::cout<< "Fitness: "<< population[0].getFitness() <<"\t";
+//        std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\t";
+//        std::cout << "Counter: " << counter << "\t";
+//        std::cout << "DifCounter: " << difCounter << "\n";
         generation++;
     }
     std::cout<< "Generation: " << generation << "\t";
