@@ -8,6 +8,7 @@ Genetic_Algo::Genetic_Algo(std::vector<Node>* n, int size)
 {
     nodes = *n;
     popSize = nodes.size()*15;
+    bestSoln = 0;
     //popSize = 1000;
 //    popSize = 50;
 
@@ -21,11 +22,9 @@ float Genetic_Algo::randNum(float start, float end)
 }
 
 
-
-
-
 void Genetic_Algo::execute()
 {
+    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
     // current generation
     int generation = 0;
 
@@ -39,51 +38,51 @@ void Genetic_Algo::execute()
         Individual temp(ind.newGnome(), &nodes);
         population.push_back(temp);
     }
+    bestSoln = population[0].getFitness();
+    bestAtGen.push_back(bestSoln);
     int counter = 0;
-    while(!found)
+    std::chrono::high_resolution_clock::time_point tempTime;
+    std::chrono::duration<double> limit;
+    while(limit.count() < 10)
     {
-        population[0].sortInds(population);
-
+        population[0].sortInds(population); // Sort the population, first element will be shortest distance
+        bestSoln = population[0].getFitness();
+        bestAtGen.push_back(bestSoln);
 
         // if the individual having lowest fitness score ie.
         // 0 then we know that we have reached to the target
         // and break the loop
-        float dif = population[popSize/10].getFitness() - population[0].getFitness();
-        if(dif == 0)
-        {
-            counter ++;
-            if(counter > nodes.size()*5)
-            {
-                found = true;
-                break;
-            }
-
-        }
-        else
-            counter = 0;
-
-        if(prevDif == dif)
-        {
-            if(difCounter >= nodes.size()*(nodes.size()/4))
-            {
-                found = true;
-                break;
-            }
-            else
-                difCounter ++;
-        }
-        else
-        {
-            prevDif = dif;
-            difCounter = 0;
-        }
-
-
-//        if(population[9].getFitness() - population[0].getFitness() < 0.75)
+//        float dif = population[popSize/10].getFitness() - population[0].getFitness();
+//        if(dif == 0)
 //        {
-//            found = true;
-//            break;
+//            counter ++;
+//            if(counter > nodes.size()*5)
+//            {
+//                found = true;
+//                break;
+//            }
+//
 //        }
+//        else
+//            counter = 0;
+//
+//        if(prevDif == dif)
+//        {
+//            if(difCounter >= nodes.size()*(nodes.size()/4))
+//            {
+//                found = true;
+//                break;
+//            }
+//            else
+//                difCounter ++;
+//        }
+//        else
+//        {
+//            prevDif = dif;
+//            difCounter = 0;
+//        }
+
+
 
         // Otherwise generate new offsprings for new generation
         std::vector<Individual> new_generation;
@@ -119,7 +118,13 @@ void Genetic_Algo::execute()
 //        std::cout << "Counter: " << counter << "\t";
 //        std::cout << "DifCounter: " << difCounter << "\n";
         generation++;
+        tempTime = std::chrono::high_resolution_clock::now();
+        limit = std::chrono::duration_cast<std::chrono::duration<double>>(tempTime-t1);
+//        std::cout << limit.count() << std::endl;
     }
+    std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+    runtime = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
+    std::cout << "Runtime: " << runtime.count() << "\t";
     std::cout<< "Generation: " << generation << "\t";
     std::cout<< "Path: ";
     for(int i = 0; i < population[0].getChromosome().size(); i++)
@@ -129,4 +134,5 @@ void Genetic_Algo::execute()
     std::cout<< "Fitness: "<< population[0].getFitness() <<"\t";
     std::cout << "Difference: " << population[9].getFitness() - population[0].getFitness() << "\t";
     std::cout << "DifCounter: " << difCounter << "\n";
+    std::cout << std::endl;
 }

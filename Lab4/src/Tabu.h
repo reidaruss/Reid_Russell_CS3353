@@ -11,7 +11,8 @@
 #include <ctime>
 #include <vector>
 #include <cmath>
-#include <queue>
+#include <chrono>
+
 
 #include "Node.h"
 #include "Neighbor.h"
@@ -26,7 +27,9 @@ private:
     std::deque<Neighbor> tabuList;
     int tListSize;
 
-
+    /// Stats ///
+    std::vector<float> bestAtGen;
+    std::chrono::duration<double> runtime;
 public:
     Tabu(std::vector<Node>* n);
     void execute();
@@ -34,6 +37,8 @@ public:
     std::vector<Neighbor> genNeighbors();
     void getNextMove(std::vector<Neighbor> neighborhood);
 
+    float getRunTime() {return runtime.count();}
+    std::vector<float> getGens(){return bestAtGen;}
 };
 
 

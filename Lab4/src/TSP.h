@@ -6,6 +6,7 @@
 #define LAB4_TSP_H
 
 #include <iostream>
+#include <chrono>
 
 #include "Algorithm.h"
 #include "file.h"
@@ -18,6 +19,9 @@ class TSP : public Algorithm{
 private:
     int algo;
     file f;
+
+    std::vector<float> tabuRuntimes;
+    std::vector<float> GARuntimes;
 
     float bruteRuntime;
     float dpRuntime;

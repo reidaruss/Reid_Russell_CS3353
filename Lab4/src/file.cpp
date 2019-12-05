@@ -6,8 +6,9 @@
 // Populate vector of nodes in order, then create vector of node pointers for next_permutation
 void file::readFile()
 {
+    std::string filename = "../src/sampleGraphs/" + fileName;
     std::ifstream file;
-    file.open(fileName);
+    file.open(filename);
     std::string line;
     std::string item;
     if (file.is_open())
@@ -50,5 +51,16 @@ void file::setNodePs()
     for(int i = 0; i < nodes.size(); i++)
     {
         nodePs.push_back(&nodes[i]);
+    }
+}
+
+void file::writeCSV(std::vector<float> dists)
+{
+    std::string newFile ="../src/output/"+ fileName + ".csv";
+    std::fstream f;
+    f.open(newFile, std::ios::out | std::ios::app);
+    for(int i = 0; i < dists.size(); i++)
+    {
+        f << i << ',' << dists[i] << "\n";
     }
 }

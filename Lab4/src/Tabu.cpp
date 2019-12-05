@@ -14,7 +14,7 @@ Tabu::Tabu(std::vector<Node>* n)
 {
     nodes = *n;
     neighborhoodSize = nodes.size();
-    maxIter = 10000;
+    maxIter = 2;
     tListSize = 50;
     std::vector<Node> initialNeighbor = nodes;
     initialNeighbor.push_back(nodes[0]);
@@ -26,16 +26,26 @@ Tabu::Tabu(std::vector<Node>* n)
 
 void Tabu::execute()
 {
+    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point tempTime;
+    std::chrono::duration<double> limit;
     int counter = 0;
-    while(counter < maxIter) // maxIter will determine when tabu stops searching
+    while(limit.count() < maxIter) // maxIter will determine when tabu stops searching
     {
         std::vector<Neighbor> neighborhood = genNeighbors();
         getNextMove(neighborhood);
         if(curr.getDist() < bestSoln.getDist()) // check if it has found new best solution
             bestSoln = curr;
         counter++;
+        tempTime = std::chrono::high_resolution_clock::now();
+        limit = std::chrono::duration_cast<std::chrono::duration<double>>(tempTime-t1);
+        bestAtGen.push_back(curr.getDist());
     }
 
+
+    std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+    runtime = std::chrono::duration_cast<std::chrono::duration<double>>(t2-t1);
+    std::cout << "Runtime of Tabu: " << runtime.count() << std::endl;
     bestSoln.printPath(); // print best path found
 
 }
@@ -47,7 +57,10 @@ std::vector<Neighbor> Tabu::genNeighbors()
     std::vector<Node> temp = currPath; // actually swapping here
     for(int i = 1; i< curr.getSize()-1; i++)
     {
+
         for(int j = curr.getSize()-2; j > i; j--) {
+            if(j <= i)
+                break;
             Node t = temp[j];
             temp[j] = temp[i];
             temp[i] = t;

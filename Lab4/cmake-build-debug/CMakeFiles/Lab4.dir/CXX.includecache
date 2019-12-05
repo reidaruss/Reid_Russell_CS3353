@@ -17,6 +17,8 @@ iostream
 -
 vector
 -
+chrono
+-
 Individual.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Individual.h
 Node.h
@@ -60,8 +62,14 @@ iostream
 vector
 -
 
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.cpp
+TSP.h
+/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h
+
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h
 iostream
+-
+chrono
 -
 Algorithm.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Algorithm.h
@@ -91,7 +99,7 @@ vector
 -
 cmath
 -
-queue
+chrono
 -
 Node.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
@@ -111,14 +119,4 @@ vector
 -
 Node.h
 /Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Node.h
-
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/main.cpp
-deque
--
-iostream
--
-Algorithm.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/Algorithm.h
-TSP.h
-/Users/reidaruss/Desktop/Junior_Year/Algorithms/Reid_Russell_CS3353/Lab4/src/TSP.h
 

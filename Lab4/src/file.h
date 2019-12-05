@@ -28,6 +28,9 @@ public:
 
     std::vector<Node> getNodes() {return nodes;}
     std::vector<Node*> getNodePs() {return nodePs;}
+
+
+    void writeCSV(std::vector<float> dists);
 };
 
 #endif //LAB4_FILE_H
